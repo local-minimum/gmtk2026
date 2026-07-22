@@ -23,6 +23,7 @@ GameSettings="*uid://b2ajf0van0a1y"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

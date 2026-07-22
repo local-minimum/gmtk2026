@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://ydqxav2mpinr"]
+
+[ext_resource type="Texture2D" uid="uid://bfdf5ysdq8a44" path="res://ui/countdown/backdrop.png" id="1_2tbrl"]
+[ext_resource type="Script" uid="uid://gfypbclki5aw" path="res://ui/countdown/countdown.gd" id="1_d8a0x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjfgv"]
+font_size = 256
+shadow_size = 50
+shadow_color = Color(0.02745098, 0.02745098, 0.02745098, 1)
+
+[node name="Countdown Clock" type="Control" unique_id=1752101559 node_paths=PackedStringArray("_labels")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_d8a0x")
+_labels = [NodePath("AspectRatioContainer/BackGround/CenterContainer/Label"), NodePath("AspectRatioContainer/BackGround/CenterContainer/Label2"), NodePath("AspectRatioContainer/BackGround/CenterContainer/Label3"), NodePath("AspectRatioContainer/BackGround/CenterContainer/Label4"), NodePath("AspectRatioContainer/BackGround/CenterContainer/Label5")]
+scroll_speed = -0.7
+label_padding = 0.5
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=171855629]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 0.8
+
+[node name="BackGround" type="ColorRect" parent="AspectRatioContainer" unique_id=1476817056]
+clip_contents = true
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="AspectRatioContainer/BackGround" unique_id=1708720012]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="AspectRatioContainer/BackGround/CenterContainer" unique_id=832521813]
+layout_mode = 2
+offset_transform_enabled = true
+text = "9"
+label_settings = SubResource("LabelSettings_kjfgv")
+
+[node name="Label2" type="Label" parent="AspectRatioContainer/BackGround/CenterContainer" unique_id=1016309173]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 300)
+text = "8"
+label_settings = SubResource("LabelSettings_kjfgv")
+
+[node name="Label3" type="Label" parent="AspectRatioContainer/BackGround/CenterContainer" unique_id=1272820409]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -300)
+text = "10"
+label_settings = SubResource("LabelSettings_kjfgv")
+
+[node name="Label4" type="Label" parent="AspectRatioContainer/BackGround/CenterContainer" unique_id=740663399]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -300)
+text = "10"
+label_settings = SubResource("LabelSettings_kjfgv")
+
+[node name="Label5" type="Label" parent="AspectRatioContainer/BackGround/CenterContainer" unique_id=876358993]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -300)
+text = "10"
+label_settings = SubResource("LabelSettings_kjfgv")
+
+[node name="Foreground" type="TextureRect" parent="AspectRatioContainer" unique_id=1194894402]
+self_modulate = Color(0.12103007, 0.12103007, 0.12103007, 1)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.1, 1.1)
+texture = ExtResource("1_2tbrl")
