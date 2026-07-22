@@ -14,6 +14,10 @@ func _ready() -> void:
 
 func _enter_tree() -> void:
     _connect_children_resize()
+
+    if Engine.is_editor_hint():
+        return
+
     if child_entered_tree.connect(_handle_add_child) != OK:
         push_error("Failed to connect add child")
     if child_exiting_tree.connect(_handle_remove_child) != OK:
