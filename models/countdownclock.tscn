@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bbc2gy51i2vaa"]
+
+[ext_resource type="PackedScene" uid="uid://2julmmd4uaoj" path="res://models/countdownclock.blend" id="1_6sgyv"]
+[ext_resource type="Script" uid="uid://bnkrl61yeae6c" path="res://models/countdownclock.gd" id="2_1h635"]
+
+[node name="countdownclock" unique_id=1385969206 node_paths=PackedStringArray("left_digit", "right_digit") instance=ExtResource("1_6sgyv")]
+script = ExtResource("2_1h635")
+left_digit = [NodePath("DP Top"), NodePath("DP Top Right"), NodePath("DP Bot Right"), NodePath("DP Bot"), NodePath("DP Bot Left"), NodePath("DB Top Left"), NodePath("DP Mid")]
+right_digit = [NodePath("DP Top_001"), NodePath("DP Top Right_001"), NodePath("DP Bot Right_001"), NodePath("DP Bot_001"), NodePath("DP Bot Left_001"), NodePath("DB Top Left_001"), NodePath("DP Mid_001")]

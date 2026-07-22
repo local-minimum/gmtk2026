@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://hs8g7nlk5cw4"]
+
+[ext_resource type="PackedScene" uid="uid://bbc2gy51i2vaa" path="res://models/countdownclock.tscn" id="1_1me06"]
+[ext_resource type="PackedScene" uid="uid://dujuiw6hre10" path="res://models/bigbutton.tscn" id="2_a7yrb"]
+
+[node name="Clock Room" type="Node3D" unique_id=1485449370]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=984988065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6010672)
+
+[node name="countdownclock" parent="." unique_id=1385969206 instance=ExtResource("1_1me06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7111465)
+
+[node name="bigbutton" parent="." unique_id=1511272115 instance=ExtResource("2_a7yrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22259498, -0.19564378)
