@@ -83,8 +83,9 @@ static func reset_input_method(input_method: InputMethod) -> void:
         var raw_im: String = key_parts[2]
         if raw_im == im_key:
             GameSettingsProvider.remove_setting(key)
-        if InputMap.has_action(action) && !actions.has(action):
-            actions.append(action)
+
+            if InputMap.has_action(action) && !actions.has(action):
+                actions.append(action)
 
     for action: String in actions:
         var all_events: Array[InputEvent] = InputMap.action_get_events(action)
