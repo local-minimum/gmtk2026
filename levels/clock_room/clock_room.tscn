@@ -10,6 +10,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6010672)
 
 [node name="countdownclock" parent="." unique_id=1385969206 instance=ExtResource("1_1me06")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7111465)
+glitched = true
 
 [node name="bigbutton" parent="." unique_id=1511272115 instance=ExtResource("2_a7yrb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22259498, -0.19564378)

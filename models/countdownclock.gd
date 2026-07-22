@@ -13,6 +13,7 @@ extends Node3D
 @export var glitched: bool:
     set(value):
         glitched = value
+        set_process(value)
         _sync()
 
 @export var glitched_update_prob: float = 0.05
@@ -33,6 +34,9 @@ const NUM_TO_MESHES: Dictionary[int, Array] = {
 }
 
 func _sync() -> void:
+    if !glitched:
+        set_process(false)
+
     var left: int = floori(current_value / 10.0)
     var right: int = posmod(current_value, 10)
     _sync_digit(left, left_digit)
@@ -46,11 +50,6 @@ func _sync_digit(val: int, meshes: Array[MeshInstance3D]) -> void:
 func _ready() -> void:
     _sync()
 
-
-var _hidden: float = 99.999
-
-func _process(delta: float) -> void:
-    _hidden = max(0.0, _hidden - delta)
-    var val = floori(_hidden)
-    if glitched && randf() < glitched_update_prob || val != current_value:
-        current_value = floori(_hidden)
+func _process(_delta: float) -> void:
+    if glitched && randf() < glitched_update_prob:
+        _sync()
