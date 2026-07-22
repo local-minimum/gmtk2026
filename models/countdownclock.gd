@@ -1,4 +1,5 @@
 extends Node3D
+class_name CountDownClock
 
 @export var current_value: int = 99:
     set(value):
@@ -31,14 +32,15 @@ const NUM_TO_MESHES: Dictionary[int, Array] = {
     7: [0, 1, 2],
     8: [0, 1, 2, 3, 4, 5, 6],
     9: [6, 5, 0, 1, 2],
+    -1: [0, 5, 4, 3, 6]
 }
 
 func _sync() -> void:
     if !glitched:
         set_process(false)
 
-    var left: int = floori(current_value / 10.0)
-    var right: int = posmod(current_value, 10)
+    var left: int = floori(current_value / 10.0) if current_value >= 0 else -1
+    var right: int = posmod(current_value, 10) if current_value >= 0 else -1
     _sync_digit(left, left_digit)
     _sync_digit(right, right_digit)
 

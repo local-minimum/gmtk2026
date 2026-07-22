@@ -42,3 +42,7 @@ signal on_complete_inspect_object(obj: Node3D)
 enum CinematicMode { INITIAL, DYNAMIC_TARGET, DYNAMIC_OFFSET }
 signal on_look_at_object(obj: Node3D, offset: Vector3, cinematic_follow: CinematicMode, ease_time: float, callback: Variant)
 signal on_unlook_at_object(obj: Node3D, ease_time: float, callback: Variant)
+
+
+# Clock Room
+signal on_count_down_room_press_big_button(press_count: int)

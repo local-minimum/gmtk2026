@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dev0dyg4x4c88"]
+
+[ext_resource type="Script" uid="uid://bje3rq2wdujt5" path="res://ui/pointer/pointer_ui.gd" id="1_de1nu"]
+[ext_resource type="Texture2D" uid="uid://bmehk3hwbht4" path="res://ui/no_interact_pointer.png" id="2_kit6v"]
+[ext_resource type="Texture2D" uid="uid://d1071lb4q0rlr" path="res://ui/interact_pointer.png" id="3_bm8yj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0dc6o"]
+
+[node name="Pointer" type="CanvasLayer" unique_id=795342930 node_paths=PackedStringArray("_textureRect", "_actionLabel")]
+layer = 1000
+script = ExtResource("1_de1nu")
+_textureRect = NodePath("CenterContainer/Pointer Texture")
+_defaultTex = ExtResource("2_kit6v")
+_interactableTex = ExtResource("3_bm8yj")
+_actionLabel = NodePath("CenterContainer/Interactable Action Label")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1893346924]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Interactable Action Label" type="Label" parent="CenterContainer" unique_id=1616114838]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 32)
+label_settings = SubResource("LabelSettings_0dc6o")
+
+[node name="Pointer Texture" type="TextureRect" parent="CenterContainer" unique_id=2010080328]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("2_kit6v")
+expand_mode = 1
+stretch_mode = 5
