@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://ctdd5eyn2w1jh" path="res://common/look_ray.gd" id="6_wrvij"]
 [ext_resource type="PackedScene" uid="uid://dev0dyg4x4c88" path="res://ui/pointer/pointer.tscn" id="7_n28xw"]
 [ext_resource type="Script" uid="uid://cq1lh5koik8h1" path="res://levels/clock_room/clock_game.gd" id="10_xeh14"]
+[ext_resource type="PackedScene" uid="uid://dqd8wvqc38rd7" path="res://models/pedistal.blend" id="11_whos6"]
+[ext_resource type="PackedScene" uid="uid://bnqejtj2hra7y" path="res://models/pole_with_rope.tscn" id="12_5nhsd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wrvij"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,11 +22,9 @@ sky_material = SubResource("ProceduralSkyMaterial_wrvij")
 
 [sub_resource type="Environment" id="Environment_1upde"]
 background_mode = 1
+background_color = Color(0.121100225, 0.11193434, 0.071568735, 1)
 sky = SubResource("Sky_n28xw")
 adjustment_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
-size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kjfgv"]
 radius = 0.25
@@ -35,6 +35,12 @@ size = Vector3(30, 0.1, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wmtyt"]
 size = Vector3(30, 0.1, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ltmj"]
+size = Vector3(0.5, 1.2636108, 0.5)
 
 [node name="Clock Room" type="Node3D" unique_id=1485449370]
 
@@ -56,25 +62,8 @@ script = ExtResource("1_njqsv")
 [node name="countdownclock" parent="." unique_id=1385969206 instance=ExtResource("1_1me06")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5385547, -3.0121098)
 
-[node name="bigbutton" parent="." unique_id=1511272115 instance=ExtResource("2_a7yrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1536984, -1.4313191)
-
-[node name="Button Interaction" type="StaticBody3D" parent="bigbutton" unique_id=2109377419 node_paths=PackedStringArray("action")]
-collision_layer = 16
-collision_mask = 0
-script = ExtResource("4_1upde")
-action = NodePath("ClockButtonAction")
-_pointer_distance = 4.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bigbutton/Button Interaction" unique_id=1082596930]
-shape = SubResource("BoxShape3D_kjfgv")
-
-[node name="ClockButtonAction" type="Node" parent="bigbutton/Button Interaction" unique_id=2091862320]
-script = ExtResource("5_n032k")
-action_name = "Press"
-metadata/_custom_type_script = "uid://ccassu3xit5vq"
-
 [node name="Player" type="CharacterBody3D" parent="." unique_id=924795759 node_paths=PackedStringArray("cam", "collider", "duck_ray")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.9590726)
 collision_layer = 2
 input_ray_pickable = false
 script = ExtResource("3_wmtyt")
@@ -113,4 +102,85 @@ shape = SubResource("BoxShape3D_wmtyt")
 [node name="ClockGame" type="Node" parent="." unique_id=681213211 node_paths=PackedStringArray("clock", "button")]
 script = ExtResource("10_xeh14")
 clock = NodePath("../countdownclock")
-button = NodePath("../bigbutton")
+button = NodePath("../pedistal/bigbutton")
+
+[node name="pedistal" parent="." unique_id=1244815401 instance=ExtResource("11_whos6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015880585, 0, -1.4726145)
+
+[node name="bigbutton" parent="pedistal" unique_id=1511272115 instance=ExtResource("2_a7yrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009665906, 1.2604992, -0.005327463)
+
+[node name="Button Interaction" type="StaticBody3D" parent="pedistal/bigbutton" unique_id=2109377419 node_paths=PackedStringArray("action")]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("4_1upde")
+action = NodePath("ClockButtonAction")
+_pointer_distance = 4.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pedistal/bigbutton/Button Interaction" unique_id=1082596930]
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="ClockButtonAction" type="Node" parent="pedistal/bigbutton/Button Interaction" unique_id=2091862320]
+script = ExtResource("5_n032k")
+action_name = "Press"
+metadata/_custom_type_script = "uid://ccassu3xit5vq"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pedistal" unique_id=1769071465]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pedistal/StaticBody3D" unique_id=2029343959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6336975, 0)
+shape = SubResource("BoxShape3D_0ltmj")
+
+[node name="pole_with_rope" parent="." unique_id=1189923521 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(0.99996555, 0, 0.008299473, 0, 1, 0, -0.008299473, 0, 0.99996555, -1.0588489, 0, 0.008630574)
+
+[node name="pole_with_rope2" parent="." unique_id=1294244078 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(0.015999783, 0, 0.99987197, 0, 1, 0, -0.99987197, 0, 0.015999783, -3, 0, 0.07264)
+
+[node name="pole_with_rope3" parent="." unique_id=148828959 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 0, 1)
+
+[node name="pole_with_rope6" parent="." unique_id=945247178 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3, 0, 2)
+
+[node name="pole_with_rope7" parent="." unique_id=1978657924 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 0, 2)
+
+[node name="only_pole" parent="." unique_id=1549545695 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 0, 2)
+
+[node name="Rope" parent="only_pole/Pole" parent_id_path=PackedInt32Array(1549545695, 2049153138) index="0" unique_id=466324247]
+visible = false
+
+[node name="CollisionShape3D2" parent="only_pole/Pole/StaticBody3D" parent_id_path=PackedInt32Array(1549545695, 183407408) index="1" unique_id=345884960]
+disabled = true
+
+[node name="only_pole2" parent="." unique_id=1268237189 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, 0, 1)
+
+[node name="Rope" parent="only_pole2/Pole" parent_id_path=PackedInt32Array(1268237189, 2049153138) index="0" unique_id=466324247]
+visible = false
+
+[node name="CollisionShape3D2" parent="only_pole2/Pole/StaticBody3D" parent_id_path=PackedInt32Array(1268237189, 183407408) index="1" unique_id=345884960]
+disabled = true
+
+[node name="pole_with_rope10" parent="." unique_id=1402767740 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 3)
+
+[node name="pole_with_rope11" parent="." unique_id=2072830763 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 0, 3)
+
+[node name="pole_with_rope8" parent="." unique_id=1587509668 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 2, 0, 3)
+
+[node name="pole_with_rope9" parent="." unique_id=1816539408 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -3.0413926, 0, 3.9503107)
+
+[node name="pole_with_rope4" parent="." unique_id=1127736608 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 1)
+
+[node name="pole_with_rope5" parent="." unique_id=1091953613 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0, 1)
+
+[editable path="only_pole"]
+[editable path="only_pole2"]
