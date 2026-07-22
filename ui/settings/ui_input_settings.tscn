@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://bx6il1in5u7tf"]
+
+[ext_resource type="Theme" uid="uid://d68s5lfedtvr" path="res://ui/menu_theme.tres" id="1_0ujk5"]
+[ext_resource type="Script" uid="uid://dyy3wjh33ed77" path="res://ui/settings/ui_input_settings.gd" id="2_tjxxc"]
+[ext_resource type="PackedScene" uid="uid://dolbqkvpj7v05" path="res://ui/components/ui_header.tscn" id="3_1s1ea"]
+[ext_resource type="PackedScene" uid="uid://c3aotifwlk21f" path="res://ui/components/ui_binding_setting.tscn" id="4_elfnc"]
+[ext_resource type="PackedScene" uid="uid://dbqqixfhrbwk1" path="res://ui/components/container_button.tscn" id="5_02tk7"]
+[ext_resource type="Script" uid="uid://dccr2cvtmib0k" path="res://ui/ui_hint_label.gd" id="5_tjxxc"]
+
+[node name="Input Settings" type="Control" unique_id=1707651675 node_paths=PackedStringArray("reset_btn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_0ujk5")
+script = ExtResource("2_tjxxc")
+reset_btn = NodePath("ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/Reset Btn")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1562359417]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=536091199]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"TabPanelMargins"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1505708353]
+layout_mode = 2
+
+[node name="Movement Header" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=626333870 instance=ExtResource("3_1s1ea")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Movement Header" index="0" unique_id=1403246602]
+text = "Movement"
+
+[node name="Forward" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1922448437 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "player_forward"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Forward/Info" parent_id_path=PackedInt32Array(1922448437, 95405177) index="1" unique_id=1578757437]
+text = "Forward"
+
+[node name="Back" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=323596045 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "player_backward"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Back/Info" parent_id_path=PackedInt32Array(323596045, 95405177) index="1" unique_id=1578757437]
+text = "Backward"
+
+[node name="Strafe Left" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=900729769 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "player_strafe_left"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Strafe Left/Info" parent_id_path=PackedInt32Array(900729769, 95405177) index="1" unique_id=1578757437]
+text = "Strafe Left"
+
+[node name="Strafe Right" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=683985800 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "player_strafe_right"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Strafe Right/Info" parent_id_path=PackedInt32Array(683985800, 95405177) index="1" unique_id=1578757437]
+text = "Strafe Right"
+
+[node name="Duck" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=934596695 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "player_duck"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Duck/Info" parent_id_path=PackedInt32Array(934596695, 95405177) index="1" unique_id=1578757437]
+text = "Crouch"
+
+[node name="Jump" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=331825185 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "player_jump"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Jump/Info" parent_id_path=PackedInt32Array(331825185, 95405177) index="1" unique_id=1578757437]
+text = "Jump"
+
+[node name="Looking Header" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=563408113 instance=ExtResource("3_1s1ea")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Looking Header" index="0" unique_id=1403246602]
+text = "Looking"
+
+[node name="Look Up" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1022154783 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "player_look_up"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Look Up/Info" parent_id_path=PackedInt32Array(1022154783, 95405177) index="1" unique_id=1578757437]
+text = "Up"
+
+[node name="Look Down" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=360405097 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "player_look_down"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Look Down/Info" parent_id_path=PackedInt32Array(360405097, 95405177) index="1" unique_id=1578757437]
+text = "Down"
+
+[node name="Look Left" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1168997374 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "player_look_left"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Look Left/Info" parent_id_path=PackedInt32Array(1168997374, 95405177) index="1" unique_id=1578757437]
+text = "Left"
+
+[node name="Look Right" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=68951622 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "player_look_right"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Look Right/Info" parent_id_path=PackedInt32Array(68951622, 95405177) index="1" unique_id=1578757437]
+text = "Right"
+
+[node name="Actions Header" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=832305112 instance=ExtResource("3_1s1ea")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Actions Header" index="0" unique_id=1403246602]
+text = "Actions"
+
+[node name="Interact" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=2059652007 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "player_interact"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Interact/Info" parent_id_path=PackedInt32Array(2059652007, 95405177) index="1" unique_id=1578757437]
+text = "Interact"
+
+[node name="Pedal Left" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=348552661 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "tvc_pedal_left"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Pedal Left/Info" parent_id_path=PackedInt32Array(348552661, 95405177) index="1" unique_id=1578757437]
+text = "Pedal Left"
+
+[node name="Pedal Right" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1473963080 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "tvc_pedal_right"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Pedal Right/Info" parent_id_path=PackedInt32Array(1473963080, 95405177) index="1" unique_id=1578757437]
+text = "Pedal Right"
+
+[node name="Other" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1312323442 instance=ExtResource("3_1s1ea")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Other" index="0" unique_id=1403246602]
+text = "Other"
+
+[node name="Pause" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=983631777 instance=ExtResource("4_elfnc")]
+layout_mode = 2
+action = "pause"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Pause/Info" parent_id_path=PackedInt32Array(983631777, 95405177) index="1" unique_id=1578757437]
+text = "Pause"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1136720580]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1566506622]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Update hint" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1580724762]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "[X] To clear selected binding"
+script = ExtResource("5_tjxxc")
+hint_pattern = "[%s] Rebind selected"
+binding = &"ui_accept"
+
+[node name="Clear hint" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1922374183]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "[X] To clear selected binding"
+script = ExtResource("5_tjxxc")
+hint_pattern = "[%s] Clear selected"
+binding = &"ui_clear_setting"
+
+[node name="Reset Btn" parent="ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1119207228 instance=ExtResource("5_02tk7")]
+layout_mode = 2
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/Reset Btn/MarginContainer/Info" parent_id_path=PackedInt32Array(1119207228, 1901675064) index="1" unique_id=1891631232]
+text = "Reset Defaults"
+
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Movement Header"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Forward"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Back"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Strafe Left"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Strafe Right"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Duck"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Jump"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Looking Header"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Look Up"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Look Down"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Look Left"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Look Right"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Actions Header"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Interact"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Pedal Left"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Pedal Right"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Other"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Pause"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/Reset Btn"]

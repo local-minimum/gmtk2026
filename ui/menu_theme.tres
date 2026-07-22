@@ -1,0 +1,111 @@
+[gd_resource type="Theme" format=3 uid="uid://d68s5lfedtvr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ymh7"]
+bg_color = Color(0.22670749, 0.22670752, 0.22670743, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.696886, 0.69688606, 0.69688576, 0.06666667)
+corner_radius_top_left = 3
+corner_radius_bottom_right = 3
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iao85"]
+bg_color = Color(0.5764706, 0.16078432, 0.043137256, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.696886, 0.69688606, 0.69688576, 0.06666667)
+corner_radius_top_left = 3
+corner_radius_bottom_right = 3
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ena0y"]
+bg_color = Color(0.65882355, 0.25882354, 0.105882354, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.696886, 0.69688606, 0.69688576, 0.06666667)
+corner_radius_top_left = 3
+corner_radius_bottom_right = 3
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yq5l5"]
+bg_color = Color(0.018940233, 0.018940238, 0.018940212, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.696886, 0.69688606, 0.69688576, 0.06666667)
+corner_radius_top_left = 3
+corner_radius_bottom_right = 3
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sojpq"]
+bg_color = Color(0.7058824, 0.23529412, 0.1764706, 1)
+skew = Vector2(0.1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.696886, 0.69688606, 0.69688576, 0.06666667)
+corner_radius_top_left = 3
+corner_radius_bottom_right = 3
+shadow_color = Color(0.69803923, 0.69803923, 0.69803923, 0.6)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6dlsj"]
+color = Color(0.91518915, 0.9151892, 0.9151892, 0.9411765)
+grow_begin = 24.0
+grow_end = 0.0
+thickness = 3
+
+[resource]
+ContainerButtonLabelDisabled/base_type = &"Label"
+ContainerButtonLabelDisabled/colors/font_color = Color(0.4627451, 0.4627451, 0.4627451, 1)
+ContainerButtonPanelDisabled/base_type = &"Panel"
+ContainerButtonPanelDisabled/styles/panel = SubResource("StyleBoxFlat_3ymh7")
+ContainerButtonPanelFocus/base_type = &"Panel"
+ContainerButtonPanelFocus/styles/panel = SubResource("StyleBoxFlat_iao85")
+ContainerButtonPanelHover/base_type = &"Panel"
+ContainerButtonPanelHover/styles/panel = SubResource("StyleBoxFlat_ena0y")
+ContainerButtonPanelNormal/base_type = &"Panel"
+ContainerButtonPanelNormal/styles/panel = SubResource("StyleBoxFlat_yq5l5")
+ContainerButtonPanelPressed/base_type = &"Panel"
+ContainerButtonPanelPressed/styles/panel = SubResource("StyleBoxFlat_sojpq")
+HSeparator/styles/separator = SubResource("StyleBoxLine_6dlsj")
+MarginContainer/constants/margin_bottom = 4
+MarginContainer/constants/margin_left = 6
+MarginContainer/constants/margin_right = 6
+MarginContainer/constants/margin_top = 4
+SettingLabelDisabled/base_type = &"Label"
+SettingLabelDisabled/colors/font_color = Color(0.4627451, 0.4627451, 0.4627451, 1)
+SettingLabelFocus/base_type = &"Label"
+SettingLabelFocus/colors/font_color = Color(0.5764706, 0.16078432, 0.043137256, 1)
+SettingLabelFocus/colors/font_shadow_color = Color(0, 0, 0, 0.6)
+SettingLabelFocus/constants/shadow_offset_x = 1
+SettingLabelFocus/constants/shadow_offset_y = 1
+SettingLabelFocus/constants/shadow_outline_size = 1
+SettingLabelHover/base_type = &"Label"
+SettingLabelHover/colors/font_color = Color(0.65882355, 0.25882354, 0.105882354, 1)
+SettingLabelPressed/base_type = &"Label"
+SettingLabelPressed/colors/font_color = Color(0.7058824, 0.23529412, 0.1764706, 1)
+SettingLabelPressed/colors/font_shadow_color = Color(0.69803923, 0.69803923, 0.69803923, 0.6)
+SettingLabelPressed/constants/shadow_offset_x = 1
+SettingLabelPressed/constants/shadow_offset_y = 1
+SettingLabelPressed/constants/shadow_outline_size = 1
+TabPanelMargins/base_type = &"MarginContainer"
+TabPanelMargins/constants/margin_left = 40
+TabPanelMargins/constants/margin_right = 10

@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://buyvujvkjkgoe"]
+
+[ext_resource type="PackedScene" uid="uid://s12ch18q1n7q" path="res://ui/components/ui_dropdown_setting.tscn" id="1_44c3k"]
+[ext_resource type="Script" uid="uid://bd8ov8ljeifti" path="res://ui/settings/ui_video_settings.gd" id="1_g3nw4"]
+[ext_resource type="Theme" uid="uid://d68s5lfedtvr" path="res://ui/menu_theme.tres" id="1_ymg0t"]
+[ext_resource type="PackedScene" uid="uid://dolbqkvpj7v05" path="res://ui/components/ui_header.tscn" id="3_5ksyw"]
+[ext_resource type="PackedScene" uid="uid://cd1dffwqryl8g" path="res://ui/components/ui_toggle_setting.tscn" id="5_x1pte"]
+[ext_resource type="PackedScene" uid="uid://djoodrll4374x" path="res://ui/components/ui_sliding_value_setting.tscn" id="6_na7jp"]
+[ext_resource type="PackedScene" uid="uid://dsjdhe4o4tcbh" path="res://ui/components/ui_stepped_value_setting.tscn" id="6_t3ga8"]
+
+[node name="Video Settings" type="Control" unique_id=1529704918 node_paths=PackedStringArray("window_mode", "borderless", "screen", "resolution_scale", "brightness", "contrast", "saturation", "motion_sickness", "fov")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ymg0t")
+script = ExtResource("1_g3nw4")
+window_mode = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Window Mode")
+borderless = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Borderless")
+screen = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Screen")
+resolution_scale = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Resolution Scaling")
+brightness = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Brightness")
+contrast = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Contrast")
+saturation = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Saturation")
+motion_sickness = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Motion Sickness")
+fov = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Field of View")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1775842824]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=1474608182]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"TabPanelMargins"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1650115934]
+layout_mode = 2
+
+[node name="Window Header" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=626333870 instance=ExtResource("3_5ksyw")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Window Header" index="0" unique_id=1403246602]
+text = "Window"
+
+[node name="Window Mode" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=590601806 instance=ExtResource("1_44c3k")]
+layout_mode = 2
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Window Mode/Info" parent_id_path=PackedInt32Array(590601806, 291128406) index="1" unique_id=1968799692]
+text = "Window Mode"
+
+[node name="Borderless" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=821867529 instance=ExtResource("5_x1pte")]
+layout_mode = 2
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Borderless/Info" parent_id_path=PackedInt32Array(821867529, 250190522) index="1" unique_id=2072160909]
+text = "Borderless"
+
+[node name="Screen" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=2057557555 instance=ExtResource("1_44c3k")]
+layout_mode = 2
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Screen/Info" parent_id_path=PackedInt32Array(2057557555, 291128406) index="1" unique_id=1968799692]
+text = "Display"
+
+[node name="Performance Header" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1855445856 instance=ExtResource("3_5ksyw")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Performance Header" index="0" unique_id=1403246602]
+text = "Performance"
+
+[node name="Resolution Scaling" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=991783841 instance=ExtResource("6_t3ga8")]
+layout_mode = 2
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Resolution Scaling/Info" parent_id_path=PackedInt32Array(991783841, 343536756) index="1" unique_id=1321155547]
+text = "Resolution Scaling"
+
+[node name="Camera Header" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=286824382 instance=ExtResource("3_5ksyw")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Camera Header" index="0" unique_id=1403246602]
+text = "Camera"
+
+[node name="Field of View" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=567288754 instance=ExtResource("6_na7jp")]
+layout_mode = 2
+value_suffix = "°"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Field of View" index="1" unique_id=1154270339]
+text = "Field of View"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Field of View" index="3" unique_id=865879719]
+min_value = 30.0
+max_value = 110.0
+value = 75.0
+rounded = true
+
+[node name="Motion Sickness" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=320519219 instance=ExtResource("6_t3ga8")]
+layout_mode = 2
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Motion Sickness/Info" parent_id_path=PackedInt32Array(320519219, 343536756) index="1" unique_id=1321155547]
+text = "Motion Sickness"
+
+[node name="World Header" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1619751682 instance=ExtResource("3_5ksyw")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/World Header" index="0" unique_id=1403246602]
+text = "World"
+
+[node name="Brightness" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1985839453 instance=ExtResource("6_na7jp")]
+layout_mode = 2
+value_suffix = "%"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Brightness" index="1" unique_id=1154270339]
+text = "Brightness"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Brightness" index="3" unique_id=865879719]
+max_value = 200.0
+rounded = true
+
+[node name="Contrast" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1783080890 instance=ExtResource("6_na7jp")]
+layout_mode = 2
+value_suffix = "%"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Contrast" index="1" unique_id=1154270339]
+text = "Contrast"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Contrast" index="3" unique_id=865879719]
+max_value = 200.0
+rounded = true
+
+[node name="Saturation" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1031184426 instance=ExtResource("6_na7jp")]
+layout_mode = 2
+value_suffix = "%"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Saturation" index="1" unique_id=1154270339]
+text = "Saturation"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Saturation" index="3" unique_id=865879719]
+max_value = 200.0
+rounded = true
+
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Window Header"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Window Mode"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Borderless"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Screen"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Performance Header"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Resolution Scaling"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Camera Header"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Field of View"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Motion Sickness"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/World Header"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Brightness"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Contrast"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Saturation"]

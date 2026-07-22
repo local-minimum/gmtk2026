@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://dh30qhepd7gj7"]
+
+[ext_resource type="Theme" uid="uid://d68s5lfedtvr" path="res://ui/menu_theme.tres" id="1_055dq"]
+[ext_resource type="PackedScene" uid="uid://dolbqkvpj7v05" path="res://ui/components/ui_header.tscn" id="1_uxq1a"]
+[ext_resource type="Script" uid="uid://b6s26a64hq4yi" path="res://ui/settings/ui_audio_settings.gd" id="2_3tv1k"]
+[ext_resource type="PackedScene" uid="uid://djoodrll4374x" path="res://ui/components/ui_sliding_value_setting.tscn" id="2_055dq"]
+[ext_resource type="PackedScene" uid="uid://sjw2w3spejch" path="res://ui/components/ui_settings_group.tscn" id="5_i6bpj"]
+
+[node name="Audio Settings" type="Control" unique_id=1267944619 node_paths=PackedStringArray("master", "music", "dialogue", "effects", "effects_alt")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_055dq")
+script = ExtResource("2_3tv1k")
+master = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Master Volume")
+music = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Music Volume")
+dialogue = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Dialogue Volume")
+effects = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Effects Volume")
+effects_alt = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Effects Volume2")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1083170985]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=305361340]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"TabPanelMargins"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1331135385]
+layout_mode = 2
+
+[node name="Volumes Header" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=626333870 instance=ExtResource("1_uxq1a")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Volumes Header" index="0" unique_id=1403246602]
+text = "Volumes"
+
+[node name="Master Volume" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=567288754 instance=ExtResource("2_055dq")]
+layout_mode = 2
+value_suffix = "%"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Master Volume" index="1" unique_id=1154270339]
+text = "Master"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Master Volume" index="3" unique_id=865879719]
+rounded = true
+
+[node name="Music Volume" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1928440051 instance=ExtResource("2_055dq")]
+layout_mode = 2
+value_suffix = "%"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Music Volume" index="1" unique_id=1154270339]
+text = "Music"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Music Volume" index="3" unique_id=865879719]
+rounded = true
+
+[node name="Dialogue Volume" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1557855872 instance=ExtResource("2_055dq")]
+layout_mode = 2
+value_suffix = "%"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Dialogue Volume" index="1" unique_id=1154270339]
+text = "Dialogue"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Dialogue Volume" index="3" unique_id=865879719]
+rounded = true
+
+[node name="Effects Volume" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1953437496 instance=ExtResource("2_055dq")]
+layout_mode = 2
+value_suffix = "%"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Effects Volume" index="1" unique_id=1154270339]
+text = "Effects"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Effects Volume" index="3" unique_id=865879719]
+rounded = true
+
+[node name="Effects Volume2" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=2043846193 instance=ExtResource("2_055dq")]
+layout_mode = 2
+value_suffix = "%"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Effects Volume2" index="1" unique_id=1154270339]
+text = "Secondary Effects"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Effects Volume2" index="3" unique_id=865879719]
+rounded = true
+
+[node name="UI Settings Group" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=623107708 instance=ExtResource("5_i6bpj")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/UI Settings Group/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(623107708, 1289401080) index="0" unique_id=1958882902]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Secondary Effects are used in some appartments where the auditory landscape is very important"
+autowrap_mode = 3
+
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Volumes Header"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Master Volume"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Music Volume"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Dialogue Volume"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Effects Volume"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Effects Volume2"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/UI Settings Group"]

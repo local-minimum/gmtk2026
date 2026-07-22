@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://c5m3h8xjb5s36"]
+
+[ext_resource type="Theme" uid="uid://d68s5lfedtvr" path="res://ui/menu_theme.tres" id="1_gkfot"]
+[ext_resource type="PackedScene" uid="uid://dolbqkvpj7v05" path="res://ui/components/ui_header.tscn" id="1_mkpri"]
+[ext_resource type="Script" uid="uid://dccxi5tjl1pyp" path="res://ui/settings/ui_game_settings.gd" id="2_3mm1k"]
+[ext_resource type="PackedScene" uid="uid://cd1dffwqryl8g" path="res://ui/components/ui_toggle_setting.tscn" id="2_gkfot"]
+[ext_resource type="PackedScene" uid="uid://djoodrll4374x" path="res://ui/components/ui_sliding_value_setting.tscn" id="3_3mm1k"]
+
+[node name="Game Settings" type="Control" unique_id=1043190973 node_paths=PackedStringArray("subtitles", "subtitles_size", "reticle_size", "reticle_transparency", "reticle_text_size", "mouse_invert_y", "mouse_sense", "joy_invert_y", "joy_sense")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gkfot")
+script = ExtResource("2_3mm1k")
+subtitles = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Subtitles")
+subtitles_size = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Subtitle Size")
+reticle_size = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Reticle Size")
+reticle_transparency = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Reticle Transparency")
+reticle_text_size = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Reticle Text Size")
+mouse_invert_y = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Mouse Invert Y")
+mouse_sense = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Mouse Sensitivity")
+joy_invert_y = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Controller Invert Y")
+joy_sense = NodePath("ScrollContainer/MarginContainer/VBoxContainer/Controller Sensitivity")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1318683252]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=1777598052]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"TabPanelMargins"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1925323110]
+layout_mode = 2
+
+[node name="Header Subtitles" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=626333870 instance=ExtResource("1_mkpri")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Header Subtitles" index="0" unique_id=1403246602]
+text = "Subtitles"
+
+[node name="Subtitles" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=821867529 instance=ExtResource("2_gkfot")]
+layout_mode = 2
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Subtitles/Info" parent_id_path=PackedInt32Array(821867529, 250190522) index="1" unique_id=2072160909]
+text = "Subtitles"
+
+[node name="Subtitle Size" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=567288754 instance=ExtResource("3_3mm1k")]
+layout_mode = 2
+value_suffix = "pt"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Subtitle Size" index="1" unique_id=1154270339]
+text = "Size"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Subtitle Size" index="3" unique_id=865879719]
+min_value = 14.0
+max_value = 42.0
+value = 14.0
+rounded = true
+
+[node name="Header Reticle" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1169381008 instance=ExtResource("1_mkpri")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Header Reticle" index="0" unique_id=1403246602]
+text = "Reticle"
+
+[node name="Reticle Size" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1718933481 instance=ExtResource("3_3mm1k")]
+layout_mode = 2
+value_suffix = "px"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Reticle Size" index="1" unique_id=1154270339]
+text = "Size"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Reticle Size" index="3" unique_id=865879719]
+min_value = 2.0
+max_value = 32.0
+value = 2.0
+rounded = true
+
+[node name="Reticle Transparency" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=160231807 instance=ExtResource("3_3mm1k")]
+layout_mode = 2
+value_suffix = "%"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Reticle Transparency" index="1" unique_id=1154270339]
+text = "Transparency"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Reticle Transparency" index="3" unique_id=865879719]
+value = 2.0
+rounded = true
+
+[node name="Reticle Text Size" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=944800325 instance=ExtResource("3_3mm1k")]
+layout_mode = 2
+value_suffix = "pt"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Reticle Text Size" index="1" unique_id=1154270339]
+text = "Action Text Size"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Reticle Text Size" index="3" unique_id=865879719]
+min_value = 8.0
+max_value = 42.0
+value = 8.0
+rounded = true
+
+[node name="Header Mouse" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1611083661 instance=ExtResource("1_mkpri")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Header Mouse" index="0" unique_id=1403246602]
+text = "Mouse"
+
+[node name="Mouse Invert Y" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1185291412 instance=ExtResource("2_gkfot")]
+layout_mode = 2
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Mouse Invert Y/Info" parent_id_path=PackedInt32Array(1185291412, 250190522) index="1" unique_id=2072160909]
+text = "Inverted Y-Axis"
+
+[node name="Mouse Sensitivity" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1940353866 instance=ExtResource("3_3mm1k")]
+layout_mode = 2
+value_rounding = "%.2f%s"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Mouse Sensitivity" index="1" unique_id=1154270339]
+text = "Sensitivity"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Mouse Sensitivity" index="3" unique_id=865879719]
+max_value = 2.0
+step = 0.01
+
+[node name="Controller" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1413713716 instance=ExtResource("1_mkpri")]
+layout_mode = 2
+
+[node name="Header" parent="ScrollContainer/MarginContainer/VBoxContainer/Controller" index="0" unique_id=1403246602]
+text = "Controller"
+
+[node name="Controller Invert Y" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=744314946 instance=ExtResource("2_gkfot")]
+layout_mode = 2
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Controller Invert Y/Info" parent_id_path=PackedInt32Array(744314946, 250190522) index="1" unique_id=2072160909]
+text = "Inverted Y-Axis"
+
+[node name="Controller Sensitivity" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1166594221 instance=ExtResource("3_3mm1k")]
+layout_mode = 2
+value_rounding = "%.2f%s"
+
+[node name="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Controller Sensitivity" index="1" unique_id=1154270339]
+text = "Sensitivity"
+
+[node name="Slider" parent="ScrollContainer/MarginContainer/VBoxContainer/Controller Sensitivity" index="3" unique_id=865879719]
+max_value = 2.0
+step = 0.01
+
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Header Subtitles"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Subtitles"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Subtitle Size"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Header Reticle"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Reticle Size"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Reticle Transparency"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Reticle Text Size"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Header Mouse"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Mouse Invert Y"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Mouse Sensitivity"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Controller"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Controller Invert Y"]
+[editable path="ScrollContainer/MarginContainer/VBoxContainer/Controller Sensitivity"]

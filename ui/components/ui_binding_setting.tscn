@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c3aotifwlk21f"]
+
+[ext_resource type="Script" uid="uid://ctfme4uf5watl" path="res://ui/components/ui_binding_setting.gd" id="1_aiqkl"]
+[ext_resource type="Texture2D" uid="uid://ciuxyaoktugh5" path="res://icon.svg" id="2_aiqkl"]
+
+[node name="UI Binding Setting" type="HBoxContainer" unique_id=1922448437 node_paths=PackedStringArray("bindings", "labels", "modulations")]
+script = ExtResource("1_aiqkl")
+bindings = [NodePath("Primary Binding"), NodePath("Secondary Binding")]
+labels = [NodePath("Info/Label")]
+modulations = [NodePath("Info/Icon")]
+
+[node name="Info" type="HBoxContainer" parent="." unique_id=95405177]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Icon" type="TextureRect" parent="Info" unique_id=1897559535]
+layout_mode = 2
+texture = ExtResource("2_aiqkl")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Info" unique_id=1578757437]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Binding"
+
+[node name="Primary Binding" type="Button" parent="." unique_id=72178136]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+toggle_mode = true
+text = "A"
+
+[node name="Secondary Binding" type="Button" parent="." unique_id=343650526]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+toggle_mode = true
+text = "A"

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://djoodrll4374x"]
+
+[ext_resource type="Script" uid="uid://cv3kjd00vjsjg" path="res://ui/components/ui_sliding_value_setting.gd" id="1_b3a21"]
+[ext_resource type="Texture2D" uid="uid://ciuxyaoktugh5" path="res://icon.svg" id="2_pdwie"]
+
+[node name="UI Sliding Value Setting" type="HBoxContainer" unique_id=567288754 node_paths=PackedStringArray("slider", "value_label", "labels", "modulations")]
+mouse_filter = 0
+script = ExtResource("1_b3a21")
+slider = NodePath("Slider")
+value_label = NodePath("Value")
+labels = [NodePath("Label"), NodePath("Value")]
+modulations = [NodePath("Icon")]
+mod_hover = Color(0.65882355, 0.25882354, 0.105882354, 1)
+mod_pressed = Color(0.7058824, 0.23529412, 0.1764706, 1)
+mod_focus = Color(0.5764706, 0.16078432, 0.043137256, 1)
+mod_disabled = Color(0.4627451, 0.4627451, 0.4627451, 1)
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1513915344]
+layout_mode = 2
+texture = ExtResource("2_pdwie")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=1154270339]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Continious"
+
+[node name="Value" type="Label" parent="." unique_id=67995951]
+layout_mode = 2
+mouse_filter = 1
+text = "0.0"
+horizontal_alignment = 2
+
+[node name="Slider" type="HSlider" parent="." unique_id=865879719]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 4)
+offset_transform_visual_only = false

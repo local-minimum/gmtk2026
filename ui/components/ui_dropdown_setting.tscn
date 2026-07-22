@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://s12ch18q1n7q"]
+
+[ext_resource type="Script" uid="uid://be0o1732ag555" path="res://ui/components/ui_dropdown_setting.gd" id="1_uu48k"]
+[ext_resource type="Texture2D" uid="uid://ciuxyaoktugh5" path="res://icon.svg" id="2_uu48k"]
+
+[node name="UI Dropdown" type="HBoxContainer" unique_id=590601806 node_paths=PackedStringArray("option", "labels", "modulations")]
+mouse_filter = 0
+script = ExtResource("1_uu48k")
+option = NodePath("OptionButton")
+labels = [NodePath("Info/Label")]
+modulations = [NodePath("Info/Icon")]
+mod_hover = Color(0.65882355, 0.25882354, 0.105882354, 1)
+mod_pressed = Color(0.7058824, 0.23529412, 0.1764706, 1)
+mod_focus = Color(0.5764706, 0.16078432, 0.043137256, 1)
+mod_disabled = Color(0.4627451, 0.4627451, 0.4627451, 1)
+
+[node name="Info" type="HBoxContainer" parent="." unique_id=291128406]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Icon" type="TextureRect" parent="Info" unique_id=866712420]
+layout_mode = 2
+texture = ExtResource("2_uu48k")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Info" unique_id=1968799692]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Drop down"
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=932315805]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 2
+clip_text = true

@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://suue6ckyvqdm"]
+
+[ext_resource type="Theme" uid="uid://d68s5lfedtvr" path="res://ui/menu_theme.tres" id="1_m2q2k"]
+[ext_resource type="Script" uid="uid://dnm5ay580ukkd" path="res://ui/settings/ui_settings.gd" id="1_m8ikv"]
+[ext_resource type="PackedScene" uid="uid://buyvujvkjkgoe" path="res://ui/settings/ui_video_settings.tscn" id="2_m2q2k"]
+[ext_resource type="PackedScene" uid="uid://dh30qhepd7gj7" path="res://ui/settings/ui_audio_settings.tscn" id="3_l141g"]
+[ext_resource type="PackedScene" uid="uid://bx6il1in5u7tf" path="res://ui/settings/ui_input_settings.tscn" id="4_bh34l"]
+[ext_resource type="PackedScene" uid="uid://c5m3h8xjb5s36" path="res://ui/settings/ui_game_settings.tscn" id="5_u4web"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_gweul"]
+
+[node name="Control" type="HBoxContainer" unique_id=1908108482 node_paths=PackedStringArray("sections", "tab_container")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m2q2k")
+theme_override_constants/separation = 40
+script = ExtResource("1_m8ikv")
+sections = [NodePath("VBoxContainer/Game Settings"), NodePath("VBoxContainer/Video Settings"), NodePath("VBoxContainer/Audio Settings"), NodePath("VBoxContainer/MnK Settings"), NodePath("VBoxContainer/Controller Settings")]
+tab_container = NodePath("TabContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1448870319]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=711624867]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Game Settings" type="Button" parent="VBoxContainer" unique_id=706942747]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_gweul")
+text = "Game Settings"
+
+[node name="Video Settings" type="Button" parent="VBoxContainer" unique_id=560418169]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_gweul")
+text = "Video"
+
+[node name="Audio Settings" type="Button" parent="VBoxContainer" unique_id=121735399]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_gweul")
+text = "Audio"
+
+[node name="MnK Settings" type="Button" parent="VBoxContainer" unique_id=265791839]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_gweul")
+text = "Keyboard & Mouse"
+
+[node name="Controller Settings" type="Button" parent="VBoxContainer" unique_id=1601728403]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_gweul")
+text = "Controller"
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1462010062]
+layout_mode = 2
+size_flags_horizontal = 3
+current_tab = 0
+tabs_visible = false
+
+[node name="Game Settings" parent="TabContainer" unique_id=818372732 instance=ExtResource("5_u4web")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Video Settings" parent="TabContainer" unique_id=1098206694 instance=ExtResource("2_m2q2k")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Audio Settings" parent="TabContainer" unique_id=1563132953 instance=ExtResource("3_l141g")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MnK Input Settings" parent="TabContainer" unique_id=295027351 instance=ExtResource("4_bh34l")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_tab_index = 3
+
+[node name="Controller Input Settings" parent="TabContainer" unique_id=212485014 instance=ExtResource("4_bh34l")]
+visible = false
+layout_mode = 2
+input_method = 1
+metadata/_tab_index = 4

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dolbqkvpj7v05"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjfgv"]
+font_size = 22
+
+[node name="UI Header" type="VBoxContainer" unique_id=626333870]
+
+[node name="Header" type="Label" parent="." unique_id=1403246602]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 8)
+text = "Header"
+label_settings = SubResource("LabelSettings_kjfgv")
+uppercase = true
+
+[node name="Separator" type="HSeparator" parent="." unique_id=838179237]
+layout_mode = 2
+offset_transform_position = Vector2(0, -1)
