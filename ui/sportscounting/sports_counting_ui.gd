@@ -1,4 +1,5 @@
 extends Control
+class_name SportsCounting
 
 @export var player: HubPlayerCharacter
 @export var counted_things: Array[CountedThing]
@@ -8,6 +9,9 @@ extends Control
 @export var show_hide_duration: float = 0.5
 
 var _scored: bool
+var scored: bool:
+    get():
+        return _scored
 
 func _enter_tree() -> void:
     if SignalBus.on_check_score.connect(_handle_count_score) != OK:

@@ -33,7 +33,7 @@ grow_vertical = 2
 offset_transform_enabled = true
 script = ExtResource("1_rcyy4")
 counted_things = [NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Fields"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Score"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Players"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Pins"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Darts"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Balls"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Score"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Flags"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Holes"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Numbers"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Holes or Flags"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Balls")]
-score = NodePath("CenterContainer/PanelContainer/MarginContainer/Label")
+score = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Score/Score")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1635390701]
 layout_mode = 1
@@ -678,7 +678,7 @@ custom_minimum_size = Vector2(31, 0)
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=2017266383]
+[node name="Title" type="Label" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=2017266383]
 layout_mode = 2
 size_flags_vertical = 0
 offset_transform_enabled = true

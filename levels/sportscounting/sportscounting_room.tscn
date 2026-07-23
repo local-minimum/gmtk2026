@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://rqls0c4hmkev" path="res://ui/sportscounting/sports_counting.tscn" id="8_sso3a"]
 [ext_resource type="PackedScene" uid="uid://dj1t8bso4a2ms" path="res://models/divider.blend" id="9_p5ucv"]
 [ext_resource type="PackedScene" uid="uid://dmyp804sexrd7" path="res://models/turnstile.tscn" id="10_7af4h"]
+[ext_resource type="Texture2D" uid="uid://bkcapyrk5ahpa" path="res://levels/sportscounting/scoring_rectangle.svg" id="11_nvxe5"]
+[ext_resource type="Script" uid="uid://cqapmdete4eea" path="res://levels/sportscounting/scoring_area.gd" id="12_3wiax"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n65dn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,6 +33,17 @@ size = Vector3(30, 0.1, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
 size = Vector3(1.5, 2.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ltmj"]
+transparency = 1
+albedo_color = Color(0.49679476, 0.041873932, 0.3590439, 1)
+albedo_texture = ExtResource("11_nvxe5")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kjfgv"]
+material = SubResource("StandardMaterial3D_0ltmj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ltmj"]
+size = Vector3(1.4, 1, 1.4)
 
 [node name="Sports Counting Room" type="Node3D" unique_id=2147399738]
 
@@ -252,6 +265,25 @@ shape = SubResource("BoxShape3D_kjfgv")
 
 [node name="turnstile" parent="Solution Area/StaticBody3D" unique_id=597974019 instance=ExtResource("10_7af4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49551964, 1.8849969e-06, 3.5831723)
+
+[node name="Scoring Area" type="MeshInstance3D" parent="Solution Area" unique_id=352957292 node_paths=PackedStringArray("counting", "player", "area", "lookTarget")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.485815, 0.0030997768, 0.807323)
+mesh = SubResource("QuadMesh_kjfgv")
+script = ExtResource("12_3wiax")
+counting = NodePath("../../SportsCounting")
+player = NodePath("../../Player")
+area = NodePath("Scoring area")
+lookTarget = NodePath("Look Target")
+
+[node name="Scoring area" type="Area3D" parent="Solution Area/Scoring Area" unique_id=1298509633]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Solution Area/Scoring Area/Scoring area" unique_id=790392639]
+transform = Transform3D(1, 0, 0, 0, 1, 8.351872e-23, 0, 8.351872e-23, 1, 0, 0.11258888, 0.6619327)
+shape = SubResource("BoxShape3D_0ltmj")
+
+[node name="Look Target" type="Node3D" parent="Solution Area/Scoring Area" unique_id=1215974648]
+transform = Transform3D(1, 0, 0, 0, 1, 8.351872e-23, 0, 8.351872e-23, 1, -0.7441783, 0.7400217, 1.29649)
 
 [editable path="footballfield/pole_with_rope10"]
 [editable path="darts/pole_with_rope15"]
