@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bnqejtj2hra7y" path="res://models/pole_with_rope.tscn" id="3_hug2p"]
 [ext_resource type="PackedScene" uid="uid://id5rsli7nb2k" path="res://models/darts.tscn" id="5_n65dn"]
 [ext_resource type="PackedScene" uid="uid://b0audvejqhoda" path="res://models/bowling.tscn" id="6_t82x7"]
+[ext_resource type="PackedScene" uid="uid://yoxqgttwifba" path="res://models/minigolf.tscn" id="7_eov81"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n65dn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -130,6 +131,48 @@ transform = Transform3D(0.989987, 0, -0.14116317, 0, 1, 0, 0.14116317, 0, 0.9899
 
 [node name="Rope" parent="bowling/pole_with_rope22/Pole" parent_id_path=PackedInt32Array(935562007, 2049153138) index="0" unique_id=466324247]
 visible = false
+
+[node name="minigolf" parent="." unique_id=167255314 instance=ExtResource("7_eov81")]
+transform = Transform3D(-0.8186985, 0, -0.5742236, 0, 1, 0, 0.5742236, 0, -0.8186985, -3.592351, 0.15000191, 2.529317)
+
+[node name="pole_with_rope11" parent="minigolf" unique_id=1464479405 instance=ExtResource("3_hug2p")]
+transform = Transform3D(0.8942937, 0, -0.44748044, 0, 1, 0, 0.44748044, 0, 0.8942937, 1.4515042, -0.15000191, -3.0436976)
+
+[node name="pole_with_rope12" parent="minigolf" unique_id=469008321 instance=ExtResource("3_hug2p")]
+transform = Transform3D(0.99861693, 0, 0.052574515, 0, 1, 0, -0.052574515, 0, 0.99861693, -0.33818388, -0.15000191, -3.9180815)
+
+[node name="pole_with_rope13" parent="minigolf" unique_id=1684137628 instance=ExtResource("3_hug2p")]
+transform = Transform3D(0.673682, 0, 0.73902124, 0, 1, 0, -0.73902124, 0, 0.673682, -2.3195038, -0.15000191, -3.7886071)
+
+[node name="pole_with_rope14" parent="minigolf" unique_id=1849440950 instance=ExtResource("3_hug2p")]
+transform = Transform3D(-0.5798787, 0, 0.81470287, 0, 1, 0, -0.81470287, 0, -0.5798787, -3.60644, -0.15000191, -2.3112292)
+
+[node name="pole_with_rope15" parent="minigolf" unique_id=323196848 instance=ExtResource("3_hug2p")]
+transform = Transform3D(-0.3405595, 0, 0.9402231, 0, 1, 0, -0.9402231, 0, -0.3405595, -2.4636855, -0.15000191, -0.6809816)
+
+[node name="pole_with_rope16" parent="minigolf" unique_id=1855265629 instance=ExtResource("3_hug2p")]
+transform = Transform3D(0.03656599, 0, 0.99933136, 0, 1, 0, -0.99933136, 0, 0.03656599, -1.8042781, -0.15000191, 1.1943903)
+
+[node name="pole_with_rope17" parent="minigolf" unique_id=1949727111 instance=ExtResource("3_hug2p")]
+transform = Transform3D(-0.35769087, 0, 0.93384016, 0, 1, 0, -0.93384016, 0, -0.35769087, -1.867883, -0.15000191, 3.1828642)
+
+[node name="pole_with_rope18" parent="minigolf" unique_id=1694554512 instance=ExtResource("3_hug2p")]
+transform = Transform3D(-0.85109425, 0, 0.5250136, 0, 1, 0, -0.5250136, 0, -0.85109425, -1.1290233, -0.15000191, 5.017066)
+
+[node name="pole_with_rope19" parent="minigolf" unique_id=702441707 instance=ExtResource("3_hug2p")]
+transform = Transform3D(-0.51517385, 0, -0.85708606, 0, 1, 0, 0.85708606, 0, -0.51517385, 0.55229855, -0.1457456, 6.0025597)
+
+[node name="pole_with_rope20" parent="minigolf" unique_id=1068536654 instance=ExtResource("3_hug2p")]
+transform = Transform3D(0.021158278, 0, -0.9997765, 0, 1, 0, 0.9997765, 0, 0.021158278, 1.6024351, -0.1500018, 4.282912)
+
+[node name="pole_with_rope21" parent="minigolf" unique_id=345957409 instance=ExtResource("3_hug2p")]
+transform = Transform3D(0.15629122, 0, -0.9877111, 0, 1, 0, 0.9877111, 0, 0.15629122, 1.5517378, -0.1500018, 2.285716)
+
+[node name="pole_with_rope22" parent="minigolf" unique_id=1885936770 instance=ExtResource("3_hug2p")]
+transform = Transform3D(-0.56343204, 0, -0.8261627, 0, 1, 0, 0.8261627, 0, -0.56343204, 1.2640076, -0.15000203, 0.3229215)
+
+[node name="pole_with_rope23" parent="minigolf" unique_id=1134459308 instance=ExtResource("3_hug2p")]
+transform = Transform3D(0.47416985, 0, -0.8804335, 0, 1, 0, 0.8804335, 0, 0.47416985, 2.3441486, -0.15000167, -1.3388505)
 
 [editable path="footballfield/pole_with_rope10"]
 [editable path="darts/pole_with_rope15"]

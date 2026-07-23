@@ -230,11 +230,11 @@ transform = Transform3D(0.9999378, -0.00020088344, -0.011146986, -0.010465533, 0
 mesh = SubResource("ArrayMesh_qtwy5")
 
 [node name="Dart4" type="MeshInstance3D" parent="Cabinett" index="5" unique_id=835210245]
-transform = Transform3D(0.9999378, -0.00020079548, -0.011147052, -0.011137306, -0.06349755, -0.99791956, -0.00050743285, 0.99798185, -0.06349584, -0.8547325, 0.3646621, -0.26037502)
+transform = Transform3D(0.9999378, -0.00020079548, -0.011147052, -0.011137306, -0.06349755, -0.99791956, -0.00050743285, 0.99798185, -0.06349584, -0.7045908, 0.36466208, -0.48718452)
 mesh = SubResource("ArrayMesh_qtwy5")
 
 [node name="Dart5" type="MeshInstance3D" parent="Cabinett" index="6" unique_id=118029162]
-transform = Transform3D(0.9945552, -0.0061131595, -0.10403007, -0.10347016, -0.17663221, -0.9788231, -0.012391363, 0.9842579, -0.17630303, 0.42193887, 0.41467354, 1.0619106)
+transform = Transform3D(0.9945552, -0.0061131595, -0.10403007, -0.10347016, -0.1766322, -0.9788231, -0.012391363, 0.9842579, -0.17630301, 0.71039206, 0.4146735, 0.920877)
 mesh = SubResource("ArrayMesh_qtwy5")
 
 [node name="Dart6" type="MeshInstance3D" parent="Cabinett" index="7" unique_id=845540648]
