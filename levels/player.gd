@@ -20,10 +20,18 @@ var joy_look_speed:
     get():
         return AccessibilitySettings.scaled_joy_sensitivy * 0.5
 
-var _cinematic_reasons: Array[Node3D]
+var _cinematic_reasons: Array[Node]
 var cinematic: bool:
     get():
         return !_cinematic_reasons.is_empty()
+
+func add_cinematic_reason(reason: Node) -> void:
+    if _cinematic_reasons.has(reason):
+        return
+    _cinematic_reasons.append(reason)
+
+func remove_cinematic_reason(reason: Node) -> void:
+    _cinematic_reasons.erase(reason)
 
 const UNDUCKING_MARGIN: float = 0.05
 

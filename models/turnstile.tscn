@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dmyp804sexrd7"]
+
+[ext_resource type="PackedScene" uid="uid://dsemoqokek367" path="res://models/turnstile.blend" id="1_08x5p"]
+[ext_resource type="Script" uid="uid://cm074344t8pmp" path="res://models/turnstile.gd" id="2_tbwyk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
+size = Vector3(1.1, 1.2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ltmj"]
+size = Vector3(0.05, 1.3, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kr4f2"]
+size = Vector3(1.1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_poe22"]
+size = Vector3(1.5, 1, 0.5)
+
+[node name="turnstile" unique_id=597974019 node_paths=PackedStringArray("_turnstile", "_open_area", "_close_area") instance=ExtResource("1_08x5p")]
+script = ExtResource("2_tbwyk")
+_turnstile = NodePath("TurnStile")
+_open_area = NodePath("Open Trigger")
+_close_area = NodePath("Close Trigger")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TurnStile" parent_id_path=PackedInt32Array(2001312471) index="0" unique_id=270869617]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TurnStile/StaticBody3D" index="0" unique_id=1464311331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.6, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4" unique_id=919349457]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=2117152762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13151798, 0.6, -0.7)
+shape = SubResource("BoxShape3D_0ltmj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=1378816915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0896735, 0.6, -0.7)
+shape = SubResource("BoxShape3D_0ltmj")
+
+[node name="Open Trigger" type="Area3D" parent="." index="5" unique_id=473474500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4778328, 0, -0.80121434)
+collision_mask = 3
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Open Trigger" index="0" unique_id=1024599372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_kr4f2")
+
+[node name="Close Trigger" type="Area3D" parent="." index="6" unique_id=1871277032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4778328, 0, 0.7143358)
+collision_mask = 3
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Close Trigger" index="0" unique_id=1639776757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.25431824)
+shape = SubResource("BoxShape3D_poe22")

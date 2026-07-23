@@ -46,3 +46,7 @@ signal on_unlook_at_object(obj: Node3D, ease_time: float, callback: Variant)
 
 # Clock Room
 signal on_count_down_room_press_big_button(press_count: int)
+
+# Sports Counting
+signal on_check_score()
+signal on_show_score_card(show: bool)

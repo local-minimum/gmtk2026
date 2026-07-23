@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://id5rsli7nb2k" path="res://models/darts.tscn" id="5_n65dn"]
 [ext_resource type="PackedScene" uid="uid://b0audvejqhoda" path="res://models/bowling.tscn" id="6_t82x7"]
 [ext_resource type="PackedScene" uid="uid://yoxqgttwifba" path="res://models/minigolf.tscn" id="7_eov81"]
+[ext_resource type="PackedScene" uid="uid://rqls0c4hmkev" path="res://ui/sportscounting/sports_counting.tscn" id="8_sso3a"]
+[ext_resource type="PackedScene" uid="uid://dj1t8bso4a2ms" path="res://models/divider.blend" id="9_p5ucv"]
+[ext_resource type="PackedScene" uid="uid://dmyp804sexrd7" path="res://models/turnstile.tscn" id="10_7af4h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n65dn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,6 +28,9 @@ size = Vector3(30, 0.1, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l8fd2"]
 size = Vector3(30, 0.1, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
+size = Vector3(1.5, 2.2, 0.1)
 
 [node name="Sports Counting Room" type="Node3D" unique_id=2147399738]
 
@@ -46,7 +52,7 @@ mesh = SubResource("BoxMesh_aacfw")
 shape = SubResource("BoxShape3D_l8fd2")
 
 [node name="Player" parent="." unique_id=1942068578 instance=ExtResource("1_l8fd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.940178)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.80207)
 
 [node name="footballfield" parent="." unique_id=1849199711 instance=ExtResource("2_tgs3m")]
 transform = Transform3D(0.97673637, 0, 0.21444365, 0, 1, 0, -0.21444365, 0, 0.97673637, -11.345123, 0.01999998, 4.309469)
@@ -173,6 +179,79 @@ transform = Transform3D(-0.56343204, 0, -0.8261627, 0, 1, 0, 0.8261627, 0, -0.56
 
 [node name="pole_with_rope23" parent="minigolf" unique_id=1134459308 instance=ExtResource("3_hug2p")]
 transform = Transform3D(0.47416985, 0, -0.8804335, 0, 1, 0, 0.8804335, 0, 0.47416985, 2.3441486, -0.15000167, -1.3388505)
+
+[node name="SportsCounting" parent="." unique_id=937896505 node_paths=PackedStringArray("player") instance=ExtResource("8_sso3a")]
+player = NodePath("../Player")
+
+[node name="Solution Area" type="Node3D" parent="." unique_id=1529651630]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.6415234, -1.8849969e-06, 8.975518)
+
+[node name="divider" parent="Solution Area" unique_id=1381177483 instance=ExtResource("9_p5ucv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.6999998, 0, 1.7000002)
+
+[node name="divider8" parent="Solution Area" unique_id=2091619126 instance=ExtResource("9_p5ucv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.70000076, 0, 0.8000002)
+
+[node name="divider9" parent="Solution Area" unique_id=1326223464 instance=ExtResource("9_p5ucv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.70000076, 0, 2.3000002)
+
+[node name="divider3" parent="Solution Area" unique_id=1380753188 instance=ExtResource("9_p5ucv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.2999997, 0, 0.7000003)
+
+[node name="divider7" parent="Solution Area" unique_id=2082903991 instance=ExtResource("9_p5ucv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.6, 0, 1.7000005)
+
+[node name="divider2" parent="Solution Area" unique_id=172036255 instance=ExtResource("9_p5ucv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4000001, 0, 2.5000005)
+
+[node name="divider5" parent="Solution Area" unique_id=636054791 instance=ExtResource("9_p5ucv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0, 2.5000002)
+
+[node name="divider4" parent="Solution Area" unique_id=1403645462 instance=ExtResource("9_p5ucv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 2.3841858e-07)
+
+[node name="divider6" parent="Solution Area" unique_id=2087139000 instance=ExtResource("9_p5ucv")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Solution Area" unique_id=629708377]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Solution Area/StaticBody3D" unique_id=1173932059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Solution Area/StaticBody3D" unique_id=609608971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.1, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Solution Area/StaticBody3D" unique_id=1857930942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4000001, 1.1, 2.5)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Solution Area/StaticBody3D" unique_id=2014726452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 1.1, 2.5000002)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Solution Area/StaticBody3D" unique_id=410318202]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.6, 1.1, 1.6000001)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Solution Area/StaticBody3D" unique_id=1223467420]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.6999998, 1.1, 1.6999998)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Solution Area/StaticBody3D" unique_id=1472993426]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6999998, 1.1, 0.79999995)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Solution Area/StaticBody3D" unique_id=753839353]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.6999998, 1.1, 2.3)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Solution Area/StaticBody3D" unique_id=459087552]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.3000002, 1.1, 0.7000003)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="turnstile" parent="Solution Area/StaticBody3D" unique_id=597974019 instance=ExtResource("10_7af4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49551964, 1.8849969e-06, 3.5831723)
 
 [editable path="footballfield/pole_with_rope10"]
 [editable path="darts/pole_with_rope15"]

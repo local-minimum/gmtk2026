@@ -1,0 +1,689 @@
+[gd_scene format=3 uid="uid://rqls0c4hmkev"]
+
+[ext_resource type="Script" uid="uid://c4qnfgh2mi5ye" path="res://ui/sportscounting/sports_counting_ui.gd" id="1_rcyy4"]
+[ext_resource type="Script" uid="uid://dfo2tf283q80t" path="res://ui/sportscounting/counted_thing.gd" id="1_seb3e"]
+[ext_resource type="Script" uid="uid://bvvpixw3mkykd" path="res://ui/sportscounting/looping_button.gd" id="1_sprkg"]
+[ext_resource type="Texture2D" uid="uid://bg0voj5ep7olg" path="res://ui/cross.svg" id="3_o2c2j"]
+[ext_resource type="Texture2D" uid="uid://ciuxyaoktugh5" path="res://icon.svg" id="3_q38rm"]
+[ext_resource type="Texture2D" uid="uid://ckslnjjc2hqej" path="res://ui/check.svg" id="4_p7vjv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q38rm"]
+bg_color = Color(0.5210982, 0.6057382, 0.6532045, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21176471, 0.21176471, 0.21176471, 0.94509804)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjfgv"]
+font_size = 32
+font_color = Color(0.5841728, 0, 0.10811349, 1)
+
+[node name="SportsCounting" type="Control" unique_id=937896505 node_paths=PackedStringArray("counted_things", "score")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+script = ExtResource("1_rcyy4")
+counted_things = [NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Fields"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Score"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Players"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Pins"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Darts"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Balls"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Score"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Flags"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Holes"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Numbers"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Holes or Flags"), NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Balls")]
+score = NodePath("CenterContainer/PanelContainer/MarginContainer/Label")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1635390701]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1467029772]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q38rm")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1210786352]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=1058647029]
+layout_mode = 2
+
+[node name="Headers" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=361393147]
+modulate = Color(0.58431375, 0, 0.10980392, 1)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Headers" unique_id=90388520]
+custom_minimum_size = Vector2(54, 0)
+layout_mode = 2
+text = "Count"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Headers" unique_id=50672466]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Sport"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Headers" unique_id=1510848990]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Thing"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Headers" unique_id=986203082]
+custom_minimum_size = Vector2(31, 0)
+layout_mode = 2
+text = "OK"
+horizontal_alignment = 1
+
+[node name="Dart Fields" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=701902727 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_count = 82
+wanted_sport = "Darts"
+wanted_thing = "Fields"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Fields" unique_id=589128741]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Fields" unique_id=1543929266]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Fields" unique_id=1273472948]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+disabled = true
+text = "Darts"
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+selected = 2
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Fields" unique_id=809806061]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Fields" unique_id=293735690]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Dart Score" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=356096101 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_count = 82
+wanted_sport = "Darts"
+wanted_thing = "Score"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Score" unique_id=807446091]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Score" unique_id=977652427]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+disabled = true
+text = "2"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+selected = 2
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Score" unique_id=10750920]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Score" unique_id=1441236704]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Score" unique_id=1950381751]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Football Players" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1928123193 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_count = 22
+wanted_sport = "Football"
+wanted_thing = "Players"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Players" unique_id=791630861]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Players" unique_id=640650873]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Players" unique_id=722748431]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Players" unique_id=588891020]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Players" unique_id=988035711]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Bowling Pins" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1739672155 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_count = 10
+wanted_sport = "Bowling"
+wanted_thing = "Pins"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Pins" unique_id=2000286284]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Pins" unique_id=39809597]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Pins" unique_id=1606563713]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Pins" unique_id=2146381490]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Pins" unique_id=1753801946]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Dart Darts" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=780086032 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_count = 8
+wanted_sport = "Darts"
+wanted_thing = "Darts"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Darts" unique_id=2147224523]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+disabled = true
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Darts" unique_id=453622589]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Darts" unique_id=49889659]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Darts" unique_id=1904991148]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Dart Darts" unique_id=992053121]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Minigolf Balls" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=370839328 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_count = 7
+wanted_sport = "Minigolf"
+wanted_thing = "Balls"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Balls" unique_id=1768192904]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Balls" unique_id=15905352]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Balls" unique_id=1618132056]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Balls" unique_id=713486921]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+disabled = true
+text = "Balls"
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+selected = 1
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Balls" unique_id=1755469921]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Bowling Score" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=319391037 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_count = 5
+wanted_sport = "Bowling"
+wanted_thing = "Score"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Score" unique_id=1379403330]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Score" unique_id=188216428]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Score" unique_id=1795205106]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Score" unique_id=1128316942]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Score" unique_id=1354572598]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Football Flags" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1030440333 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_count = 4
+wanted_sport = "Football"
+wanted_thing = "Flags"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Flags" unique_id=1075441465]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Flags" unique_id=5157239]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Flags" unique_id=958595929]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+disabled = true
+text = "Football"
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+selected = 1
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Flags" unique_id=1847932]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Flags" unique_id=619856771]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Bowling Holes" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=930170730 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_count = 3
+wanted_sport = "Bowling"
+wanted_thing = "Holes"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Holes" unique_id=365079407]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Holes" unique_id=183136568]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+disabled = true
+text = "3"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+selected = 3
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Holes" unique_id=163324285]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Holes" unique_id=816117392]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Bowling Holes" unique_id=280269909]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Minigolf Numbers" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=60928281 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_count = 2
+wanted_sport = "Minigolf"
+wanted_thing = "Numbers"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Numbers" unique_id=810347982]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Numbers" unique_id=978261535]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Numbers" unique_id=1061904355]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Numbers" unique_id=1305356328]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Numbers" unique_id=1963672929]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Minigolf Holes or Flags" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1465465400 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_count = 1
+wanted_sport = "Minigolf"
+wanted_thing = "Holes"
+alt_wanted_thing = "Flags"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Holes or Flags" unique_id=1452106033]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Holes or Flags" unique_id=1362698525]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Holes or Flags" unique_id=1827077492]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Holes or Flags" unique_id=1465007256]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Minigolf Holes or Flags" unique_id=1018192200]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Football Balls" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=821301871 node_paths=PackedStringArray("number10x", "number1x", "sport", "thing", "check")]
+layout_mode = 2
+script = ExtResource("1_seb3e")
+number10x = NodePath("10x Number")
+number1x = NodePath("1x Number")
+sport = NodePath("Sport")
+thing = NodePath("Thing")
+check = NodePath("Check Texture")
+wanted_sport = "Football"
+wanted_thing = "Balls"
+err_texture = ExtResource("3_o2c2j")
+correct_texture = ExtResource("4_p7vjv")
+
+[node name="10x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Balls" unique_id=1858076285]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="1x Number" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Balls" unique_id=1000597604]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "0"
+script = ExtResource("1_sprkg")
+values = Array[String](["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
+
+[node name="Sport" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Balls" unique_id=1479490888]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Football", "Darts", "Bowling", "Minigolf"])
+
+[node name="Thing" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Balls" unique_id=319780098]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+script = ExtResource("1_sprkg")
+values = Array[String](["", "Balls", "Darts", "Fields", "Flags", "Goals", "Holes", "Numbers", "Pins", "Players", "Score"])
+
+[node name="Check Texture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Football Balls" unique_id=1385620814]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_q38rm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Score" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=821647643]
+modulate = Color(0.58431375, 0, 0.10980392, 1)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Score" unique_id=1138629342]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Score:"
+horizontal_alignment = 2
+
+[node name="Score" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Score" unique_id=2107776920]
+custom_minimum_size = Vector2(31, 0)
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=2017266383]
+layout_mode = 2
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -50)
+offset_transform_rotation = -0.034906585
+text = "Always Count Down!"
+label_settings = SubResource("LabelSettings_kjfgv")
+horizontal_alignment = 1

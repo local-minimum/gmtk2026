@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://ccassu3xit5vq" path="res://levels/clock_room/clock_button_action.gd" id="5_n032k"]
 [ext_resource type="PackedScene" uid="uid://dev0dyg4x4c88" path="res://ui/pointer/pointer.tscn" id="7_n28xw"]
 [ext_resource type="Script" uid="uid://cq1lh5koik8h1" path="res://levels/clock_room/clock_game.gd" id="10_xeh14"]
+[ext_resource type="PackedScene" uid="uid://dmyp804sexrd7" path="res://models/turnstile.tscn" id="11_5nhsd"]
 [ext_resource type="PackedScene" uid="uid://dqd8wvqc38rd7" path="res://models/pedistal.blend" id="11_whos6"]
 [ext_resource type="PackedScene" uid="uid://bnqejtj2hra7y" path="res://models/pole_with_rope.tscn" id="12_5nhsd"]
 
@@ -152,6 +153,9 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="pole_with_rope5" parent="." unique_id=1091953613 instance=ExtResource("12_5nhsd")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0, 1)
+
+[node name="turnstile" parent="." unique_id=597974019 instance=ExtResource("11_5nhsd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.257861, -4.7683716e-07, 2.3864374)
 
 [editable path="only_pole"]
 [editable path="only_pole2"]
