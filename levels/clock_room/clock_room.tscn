@@ -3,11 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bbc2gy51i2vaa" path="res://models/countdownclock.tscn" id="1_1me06"]
 [ext_resource type="Script" uid="uid://bnt7brlt3uhf8" path="res://common/adjustable_world_environment.gd" id="1_njqsv"]
 [ext_resource type="PackedScene" uid="uid://dujuiw6hre10" path="res://models/bigbutton.tscn" id="2_a7yrb"]
-[ext_resource type="Script" uid="uid://dn46xe2xa0bcn" path="res://levels/player.gd" id="3_wmtyt"]
+[ext_resource type="PackedScene" uid="uid://60mxtlvkhokn" path="res://levels/player.tscn" id="3_xeh14"]
 [ext_resource type="Script" uid="uid://b4rjhvhhliivj" path="res://common/interactable.gd" id="4_1upde"]
-[ext_resource type="Script" uid="uid://b8128v5amfueg" path="res://common/adjustable_camera3d.gd" id="4_j1mme"]
 [ext_resource type="Script" uid="uid://ccassu3xit5vq" path="res://levels/clock_room/clock_button_action.gd" id="5_n032k"]
-[ext_resource type="Script" uid="uid://ctdd5eyn2w1jh" path="res://common/look_ray.gd" id="6_wrvij"]
 [ext_resource type="PackedScene" uid="uid://dev0dyg4x4c88" path="res://ui/pointer/pointer.tscn" id="7_n28xw"]
 [ext_resource type="Script" uid="uid://cq1lh5koik8h1" path="res://levels/clock_room/clock_game.gd" id="10_xeh14"]
 [ext_resource type="PackedScene" uid="uid://dqd8wvqc38rd7" path="res://models/pedistal.blend" id="11_whos6"]
@@ -25,10 +23,6 @@ background_mode = 1
 background_color = Color(0.121100225, 0.11193434, 0.071568735, 1)
 sky = SubResource("Sky_n28xw")
 adjustment_enabled = true
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kjfgv"]
-radius = 0.25
-height = 1.8
 
 [sub_resource type="BoxMesh" id="BoxMesh_kjfgv"]
 size = Vector3(30, 0.1, 30)
@@ -62,31 +56,8 @@ script = ExtResource("1_njqsv")
 [node name="countdownclock" parent="." unique_id=1385969206 instance=ExtResource("1_1me06")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5385547, -3.0121098)
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=924795759 node_paths=PackedStringArray("cam", "collider", "duck_ray")]
+[node name="Player" parent="." unique_id=1942068578 instance=ExtResource("3_xeh14")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.9590726)
-collision_layer = 2
-input_ray_pickable = false
-script = ExtResource("3_wmtyt")
-cam = NodePath("Camera3D")
-collider = NodePath("Player Collider")
-duck_ray = NodePath("Duck Ray")
-
-[node name="Player Collider" type="CollisionShape3D" parent="Player" unique_id=944806733]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("CapsuleShape3D_kjfgv")
-
-[node name="Camera3D" type="Camera3D" parent="Player" unique_id=984988065]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
-script = ExtResource("4_j1mme")
-
-[node name="Look Ray" type="RayCast3D" parent="Player/Camera3D" unique_id=561294718]
-target_position = Vector3(0, 0, -8)
-collision_mask = 17
-script = ExtResource("6_wrvij")
-
-[node name="Duck Ray" type="RayCast3D" parent="Player" unique_id=1087226661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
-target_position = Vector3(0, 1, 0)
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=825255692]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
