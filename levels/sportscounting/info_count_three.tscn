@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://vhb1wjd7pjxy"]
+
+[ext_resource type="PackedScene" uid="uid://c58pjc4cni8co" path="res://models/infothingy.blend" id="1_yo4ji"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_anryd"]
+albedo_color = Color(1.4920532e-06, 0.44212857, 0.4437092, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
+size = Vector3(0.5, 1, 0.58)
+
+[node name="infothingy" unique_id=657627949 instance=ExtResource("1_yo4ji")]
+
+[node name="Stand" parent="." index="0" unique_id=368696246]
+transform = Transform3D(0.96807015, -0.25067937, 0, 0.25067937, 0.96807015, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Placate" parent="Stand" index="0" unique_id=1577511244]
+surface_material_override/1 = SubResource("StandardMaterial3D_anryd")
+
+[node name="Label3D" type="Label3D" parent="Stand/Placate" index="0" unique_id=855977713]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0.012262464, 0.7339632, 0)
+double_sided = false
+modulate = Color(1, 1, 1, 0.5882353)
+outline_modulate = Color(0, 0, 0, 0.54901963)
+text = "Sports Counting"
+
+[node name="Label3D2" type="Label3D" parent="Stand/Placate" index="1" unique_id=281447168]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0.012262464, 0.6695796, 0)
+double_sided = false
+modulate = Color(1, 1, 1, 0.5882353)
+outline_modulate = Color(0, 0, 0, 0.54901963)
+text = "Down!"
+
+[node name="Label3D4" type="Label3D" parent="Stand/Placate" index="2" unique_id=1916792206]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0.012262464, 0.47653514, 0)
+double_sided = false
+modulate = Color(0.9843137, 0.12941177, 1, 0.54509807)
+outline_modulate = Color(0, 0, 0, 0.4392157)
+text = "Remember:
+Each sport is 
+counted 3 times"
+font_size = 28
+outline_size = 8
+
+[node name="Label3D3" type="Label3D" parent="Stand/Placate" index="3" unique_id=2125422847]
+transform = Transform3D(-1.3113415e-08, 7.940934e-24, 0.29999998, 0.037058763, 0.29770228, 1.6198899e-09, -0.29770228, 0.037058763, -1.3012978e-08, 0.012262464, 0.2336851, -0.0051638186)
+double_sided = false
+modulate = Color(1, 1, 1, 0.5882353)
+outline_modulate = Color(0, 0, 0, 0.54901963)
+text = "Are you down?"
+
+[node name="Stand_001" parent="Stand" index="1" unique_id=60979139]
+transform = Transform3D(0.8565833, 0.51600856, 0, -0.51600856, 0.8565833, 0, 0, 0, 1, 0, 0.9001931, -0.0011306852)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1938902953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22686625, 0.37550262, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=304173056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019872189, 0.11325073, 0)
+shape = SubResource("BoxShape3D_kjfgv")

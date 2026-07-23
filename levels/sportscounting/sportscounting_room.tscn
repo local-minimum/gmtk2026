@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dmyp804sexrd7" path="res://models/turnstile.tscn" id="10_7af4h"]
 [ext_resource type="Texture2D" uid="uid://bkcapyrk5ahpa" path="res://levels/sportscounting/scoring_rectangle.svg" id="11_nvxe5"]
 [ext_resource type="Script" uid="uid://cqapmdete4eea" path="res://levels/sportscounting/scoring_area.gd" id="12_3wiax"]
+[ext_resource type="PackedScene" uid="uid://vhb1wjd7pjxy" path="res://levels/sportscounting/info_count_three.tscn" id="13_lhkjd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n65dn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -284,6 +285,9 @@ shape = SubResource("BoxShape3D_0ltmj")
 
 [node name="Look Target" type="Node3D" parent="Solution Area/Scoring Area" unique_id=1215974648]
 transform = Transform3D(1, 0, 0, 0, 1, 8.351872e-23, 0, 8.351872e-23, 1, -0.7441783, 0.7400217, 1.29649)
+
+[node name="infothingy" parent="Solution Area/Scoring Area" unique_id=657627949 instance=ExtResource("13_lhkjd")]
+transform = Transform3D(0.9969757, 3.5527137e-15, 0.07771385, 0.07771385, -4.3711392e-08, -0.9969757, 3.3969803e-09, 1, -4.3579192e-08, 0.8546119, -6.501155, -0.00012971135)
 
 [editable path="footballfield/pole_with_rope10"]
 [editable path="darts/pole_with_rope15"]
