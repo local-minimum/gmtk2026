@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dx584u8f753ar" path="res://models/footballfield.tscn" id="2_tgs3m"]
 [ext_resource type="PackedScene" uid="uid://bnqejtj2hra7y" path="res://models/pole_with_rope.tscn" id="3_hug2p"]
 [ext_resource type="PackedScene" uid="uid://id5rsli7nb2k" path="res://models/darts.tscn" id="5_n65dn"]
+[ext_resource type="PackedScene" uid="uid://b0audvejqhoda" path="res://models/bowling.tscn" id="6_t82x7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n65dn"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -103,5 +104,33 @@ transform = Transform3D(-0.8521329, 0, -0.5233255, 0, 1, 0, 0.5233255, 0, -0.852
 [node name="Rope" parent="darts/pole_with_rope15/Pole" parent_id_path=PackedInt32Array(1806431306, 2049153138) index="0" unique_id=466324247]
 visible = false
 
+[node name="bowling" parent="." unique_id=55571575 instance=ExtResource("6_t82x7")]
+transform = Transform3D(-0.9758314, 0, -0.21852481, 0, 1, 0, 0.21852481, 0, -0.9758314, 8.341561, 0.1831668, -0.17704868)
+
+[node name="pole_with_rope16" parent="bowling" unique_id=833240853 instance=ExtResource("3_hug2p")]
+transform = Transform3D(-0.9968267, 0, -0.07960275, 0, 1, 0, 0.07960275, 0, -0.9968267, -1.0803843, -0.1831668, -1.4195459)
+
+[node name="pole_with_rope17" parent="bowling" unique_id=1203360907 instance=ExtResource("3_hug2p")]
+transform = Transform3D(-0.9995789, 0, 0.029026747, 0, 1, 0, -0.029026747, 0, -0.9995789, 0.91027546, -0.1831668, -1.5710881)
+
+[node name="pole_with_rope18" parent="bowling" unique_id=1408691407 instance=ExtResource("3_hug2p")]
+transform = Transform3D(-0.6432119, 0, 0.765689, 0, 1, 0, -0.765689, 0, -0.6432119, 2.8799396, -0.1831668, -1.4872324)
+
+[node name="pole_with_rope19" parent="bowling" unique_id=708756957 instance=ExtResource("3_hug2p")]
+transform = Transform3D(0.50601196, 0, 0.8625272, 0, 1, 0, -0.8625272, 0, 0.50601196, 4.1091385, -0.18316692, 0.043957353)
+
+[node name="pole_with_rope20" parent="bowling" unique_id=1723988776 instance=ExtResource("3_hug2p")]
+transform = Transform3D(0.9999195, 0, 0.012749344, 0, 1, 0, -0.012749344, 0, 0.9999195, 3.0768843, -0.18316692, 1.7233045)
+
+[node name="pole_with_rope21" parent="bowling" unique_id=1728059818 instance=ExtResource("3_hug2p")]
+transform = Transform3D(0.989987, 0, -0.14116317, 0, 1, 0, 0.14116317, 0, 0.989987, 1.0784221, -0.18316692, 1.7433621)
+
+[node name="pole_with_rope22" parent="bowling" unique_id=935562007 instance=ExtResource("3_hug2p")]
+transform = Transform3D(0.989987, 0, -0.14116317, 0, 1, 0, 0.14116317, 0, 0.989987, -0.8988962, -0.18316704, 1.4671354)
+
+[node name="Rope" parent="bowling/pole_with_rope22/Pole" parent_id_path=PackedInt32Array(935562007, 2049153138) index="0" unique_id=466324247]
+visible = false
+
 [editable path="footballfield/pole_with_rope10"]
 [editable path="darts/pole_with_rope15"]
+[editable path="bowling/pole_with_rope22"]
