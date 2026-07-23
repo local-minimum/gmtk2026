@@ -25,11 +25,13 @@ func _handle_count_score() -> void:
     if _scored:
         return
 
+    _scoring = true
+    _scored = true
+
     if !visible:
         visible = true
         await get_tree().create_timer(count_delay).timeout
 
-    _scored = true
     var _score: int = 0
     score.text = "0"
     await  get_tree().create_timer(count_delay).timeout
@@ -41,7 +43,9 @@ func _handle_count_score() -> void:
 
         await  get_tree().create_timer(count_step_delay).timeout
 
+    _scoring = false
 
+var _scoring: bool
 var _showing: bool = false
 var _show_tween: Tween
 
@@ -54,6 +58,9 @@ func _input(event: InputEvent) -> void:
         get_viewport().set_input_as_handled()
 
 func _handle_show_counting(shown: bool) -> void:
+    if _scoring:
+        return
+
     if _show_tween && _show_tween.is_running():
         _show_tween.kill()
 

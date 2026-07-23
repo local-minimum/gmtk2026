@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="59.600624mm"
+   height="59.600624mm"
+   viewBox="0 0 59.600624 59.600624"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="scoring_rectangle.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.284147"
+     inkscape:cx="45.31232"
+     inkscape:cy="123.02185"
+     inkscape:window-width="2743"
+     inkscape:window-height="1469"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-67.964119,-89.046021)">
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:4"
+       id="rect1"
+       width="55.600624"
+       height="55.600624"
+       x="69.964119"
+       y="91.046021"
+       ry="1.274181"
+       rx="1.1004291" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.93889px;line-height:4.445px;font-family:'URW Bookman';-inkscape-font-specification:'URW Bookman Light';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:none;stroke-width:4"
+       x="77.838486"
+       y="148.30606"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.93889px;line-height:4.445px;font-family:'URW Bookman';-inkscape-font-specification:'URW Bookman Light';fill:#1a1a1a;stroke:none;stroke-width:4"
+         x="77.838486"
+         y="148.30606">SCORING AREA</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.93889px;line-height:4.445px;font-family:'URW Bookman';-inkscape-font-specification:'URW Bookman Light';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:none;stroke-width:4"
+       x="-138.77228"
+       y="127.1306"
+       id="text2"
+       transform="rotate(-90)"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.93889px;line-height:4.445px;font-family:'URW Bookman';-inkscape-font-specification:'URW Bookman Light';fill:#1a1a1a;stroke:none;stroke-width:4"
+         x="-138.77228"
+         y="127.1306">SCORING AREA</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.93889px;line-height:4.445px;font-family:'URW Bookman';-inkscape-font-specification:'URW Bookman Light';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:none;stroke-width:4"
+       x="98.920387"
+       y="-68.166595"
+       id="text3"
+       transform="rotate(90)"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.93889px;line-height:4.445px;font-family:'URW Bookman';-inkscape-font-specification:'URW Bookman Light';fill:#1a1a1a;stroke:none;stroke-width:4"
+         x="98.920387"
+         y="-68.166595">SCORING AREA</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.93889px;line-height:4.445px;font-family:'URW Bookman';-inkscape-font-specification:'URW Bookman Light';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:none;stroke-width:4"
+       x="-117.69038"
+       y="-89.457886"
+       id="text4"
+       transform="scale(-1)"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:4.93889px;line-height:4.445px;font-family:'URW Bookman';-inkscape-font-specification:'URW Bookman Light';fill:#1a1a1a;stroke:none;stroke-width:4"
+         x="-117.69038"
+         y="-89.457886">SCORING AREA</tspan></text>
+  </g>
+</svg>
