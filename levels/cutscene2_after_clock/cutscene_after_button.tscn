@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://qoauc2qneyac"]
+
+[ext_resource type="Script" uid="uid://q1oregpjtkgw" path="res://levels/cutscene.gd" id="1_ptf3w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_du5n2"]
+font_size = 62
+font_color = Color(0.56761754, 0.5909177, 0.8612756, 1)
+
+[node name="Cutscene After Button" type="Node2D" unique_id=733948661]
+script = ExtResource("1_ptf3w")
+next_scene = "uid://clgl7ta0h7i3s"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=232985363]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2048614281]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=2034872100]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=1550467973]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1288568411]
+layout_mode = 2
+text = "AFTER THE FAILED
+BUTTON ROOM"
+label_settings = SubResource("LabelSettings_du5n2")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1350558808]
+layout_mode = 2
+text = "The Entrepreneur knows they were right about count-downs. 
+The people are just stupid. So lets give them what they love: Sports
+With count-downs of course."
+
+[node name="Label3" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1056494354]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 4)
+text = "Press Any key to continue"
+horizontal_alignment = 2

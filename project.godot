@@ -12,7 +12,7 @@ config_version=5
 
 config/name="The Entrepreneur"
 config/version="0.1"
-run/main_scene="uid://clgl7ta0h7i3s"
+run/main_scene="uid://bm7j0v7xgcx6o"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

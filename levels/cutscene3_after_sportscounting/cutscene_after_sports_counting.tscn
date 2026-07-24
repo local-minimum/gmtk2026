@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bpseo3yvq6o0e"]
+
+[ext_resource type="Script" uid="uid://q1oregpjtkgw" path="res://levels/cutscene.gd" id="1_dq0gk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8mi8h"]
+font_size = 62
+font_color = Color(0.56761754, 0.5909177, 0.8612756, 1)
+
+[node name="Cutscene After Sports Counting" type="Node2D" unique_id=1655113518]
+script = ExtResource("1_dq0gk")
+next_scene = "uid://dprhtre7mf5mx"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1465454244]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=888829619]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1149165109]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=1816742780]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1612786987]
+layout_mode = 2
+text = "AFTER THE FAILED
+SPORTS COUTNING"
+label_settings = SubResource("LabelSettings_8mi8h")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1537239192]
+layout_mode = 2
+text = "Back at the kitchen table, 
+it seems that was much to smart and sophisticated.
+They need stupid fun, and what is stupid fun? Lets add guns!"
+
+[node name="Label3" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=333893585]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 4)
+text = "Press Any key to continue"
+horizontal_alignment = 2

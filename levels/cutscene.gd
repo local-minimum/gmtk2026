@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-    if Time.get_ticks_msec() < 500:
+    if (Time.get_ticks_msec() - t0) < 500 || next_scene.is_empty():
         return
 
     if (event is InputEventKey || event is InputEventJoypadButton || event is InputEventMouseButton) && event.is_pressed():

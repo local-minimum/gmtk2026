@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://meoyfx1l5spe"]
+
+[ext_resource type="Script" uid="uid://q1oregpjtkgw" path="res://levels/cutscene.gd" id="1_k0xpy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_twtnu"]
+font_size = 62
+font_color = Color(0.56761754, 0.5909177, 0.8612756, 1)
+
+[node name="Cutscene outro" type="Node2D" unique_id=892113952]
+script = ExtResource("1_k0xpy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1260081656]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=723937717]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=269018785]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=100225579]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1505359507]
+layout_mode = 2
+text = "OUTRO CUTSCENE"
+label_settings = SubResource("LabelSettings_twtnu")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1574554775]
+layout_mode = 2
+text = "The Entrepreneur sits at his kitchen table.
+Narrator reads a poem about his struggles and the unfairness of the entrepreneur 
+having struck fun-gold with the last idea but somehow the authorities had said
+this was not allowed. The no-fun police had come and shut it down after a guest 
+just got a little hurt."
+
+[node name="Label3" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1540028896]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 4)
+text = "Nothing more, this would loop to menu"
+horizontal_alignment = 2
