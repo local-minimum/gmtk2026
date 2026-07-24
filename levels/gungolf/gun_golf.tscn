@@ -3,6 +3,13 @@
 [ext_resource type="Script" uid="uid://bnt7brlt3uhf8" path="res://common/adjustable_world_environment.gd" id="1_21ycd"]
 [ext_resource type="PackedScene" uid="uid://60mxtlvkhokn" path="res://levels/player.tscn" id="2_rc52x"]
 [ext_resource type="Script" uid="uid://fpforrfkhcbf" path="res://levels/leave_area.gd" id="3_rc52x"]
+[ext_resource type="PackedScene" uid="uid://cwsw0ps3kvmch" path="res://models/woodpallet.tscn" id="4_1udsw"]
+[ext_resource type="PackedScene" uid="uid://cy51eu6tclc4p" path="res://models/minigolf_start.tscn" id="5_cvhwa"]
+[ext_resource type="PackedScene" uid="uid://cfhcf2xswh2cw" path="res://models/minigolf_straight.tscn" id="6_jh2rq"]
+[ext_resource type="PackedScene" uid="uid://bah2xmruadfoa" path="res://models/minigolf_hole.tscn" id="7_qsg7g"]
+[ext_resource type="PackedScene" uid="uid://dqd8wvqc38rd7" path="res://models/pedistal.blend" id="8_yuym2"]
+[ext_resource type="PackedScene" uid="uid://dj1t8bso4a2ms" path="res://models/divider.blend" id="9_4nayq"]
+[ext_resource type="PackedScene" uid="uid://dmyp804sexrd7" path="res://models/turnstile.tscn" id="10_imrse"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1udsw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -36,6 +43,12 @@ size = Vector3(0.1, 2.7, 22)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1udsw"]
 size = Vector3(2, 2, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yuym2"]
+size = Vector3(0.45, 1.2, 0.45)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
+size = Vector3(1.5, 2.2, 0.1)
 
 [node name="Gun Golf" type="Node3D" unique_id=1420092677]
 
@@ -191,3 +204,137 @@ text = "I SHOULD GIVE THIS
 EXPERIENCE A
 CHANCE BEFORE
 LEAVING."
+
+[node name="Hole 1" type="Node3D" parent="." unique_id=919406688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.355287, 0.90897286, 6.9453154)
+
+[node name="woodpallet" parent="Hole 1" unique_id=974080134 instance=ExtResource("4_1udsw")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.747694, -0.55177754, 0.4046706)
+
+[node name="woodpallet4" parent="Hole 1" unique_id=364782202 instance=ExtResource("4_1udsw")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.747694, -0.55177754, -0.85230756)
+
+[node name="woodpallet5" parent="Hole 1" unique_id=645322520 instance=ExtResource("4_1udsw")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.747694, -0.55177754, -2.1073632)
+
+[node name="woodpallet8" parent="Hole 1" unique_id=1530930649 instance=ExtResource("4_1udsw")]
+transform = Transform3D(-3.863915e-08, 0.8839607, 0.46756116, -1, -4.371139e-08, 0, 2.0437747e-08, -0.46756116, 0.8839607, 0.4919405, -0.55177754, -3.3199563)
+
+[node name="woodpallet9" parent="Hole 1" unique_id=769443693 instance=ExtResource("4_1udsw")]
+transform = Transform3D(-4.371078e-08, 0.9999862, 0.0052636713, -1, -4.371139e-08, 0, 2.3008284e-10, -0.0052636713, 0.9999862, 0.6512213, -0.55177754, -4.2839065)
+
+[node name="woodpallet11" parent="Hole 1" unique_id=1952238429 instance=ExtResource("4_1udsw")]
+transform = Transform3D(2.0038334e-08, -0.4584236, 0.88873386, -1, -4.371139e-08, 0, 3.8847787e-08, -0.88873386, -0.4584236, -0.24785852, -0.55177754, -4.7290034)
+
+[node name="woodpallet3" parent="Hole 1" unique_id=1656883206 instance=ExtResource("4_1udsw")]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, -0.011188984, -0.55177754, 0.96316075)
+
+[node name="woodpallet2" parent="Hole 1" unique_id=836633766 instance=ExtResource("4_1udsw")]
+transform = Transform3D(4.3711385e-08, -1, -8.940697e-08, -1, -4.371139e-08, 0, -2.6645353e-15, 8.940697e-08, -1, -0.7694416, -0.55177754, 0.4046706)
+
+[node name="woodpallet6" parent="Hole 1" unique_id=1405489754 instance=ExtResource("4_1udsw")]
+transform = Transform3D(4.3711385e-08, -1, -8.940697e-08, -1, -4.371139e-08, 0, -2.6645353e-15, 8.940697e-08, -1, -0.7694416, -0.55177754, -0.8736063)
+
+[node name="woodpallet7" parent="Hole 1" unique_id=381215365 instance=ExtResource("4_1udsw")]
+transform = Transform3D(4.3711385e-08, -1, -8.940697e-08, -1, -4.371139e-08, 0, -2.6645353e-15, 8.940697e-08, -1, -0.7694416, -0.55177754, -2.1633625)
+
+[node name="woodpallet10" parent="Hole 1" unique_id=1057462040 instance=ExtResource("4_1udsw")]
+transform = Transform3D(4.3475556e-08, -0.9946048, 0.103736326, -1, -4.371139e-08, 0, 4.53446e-09, -0.103736326, -0.9946048, -0.6909189, -0.5517775, -3.4672484)
+
+[node name="minigolf_start" parent="Hole 1" unique_id=1171637293 instance=ExtResource("5_cvhwa")]
+
+[node name="minigolf_straight" parent="Hole 1" unique_id=1054106383 instance=ExtResource("6_jh2rq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00129807, -1.9902047)
+
+[node name="minigolf_hole" parent="Hole 1" unique_id=27374273 instance=ExtResource("7_qsg7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.004034281, -3.9926925)
+
+[node name="Lobby" type="Node3D" parent="." unique_id=188384183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8917172, 0, 9.46651)
+
+[node name="pedistal" parent="Lobby" unique_id=1097199147 instance=ExtResource("8_yuym2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7382822, 2.3841858e-07, -0.59501266)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lobby/pedistal" unique_id=1225168257]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby/pedistal/StaticBody3D" unique_id=1435409809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6280212, 0)
+shape = SubResource("BoxShape3D_yuym2")
+
+[node name="divider" parent="Lobby" unique_id=1326223464 instance=ExtResource("9_4nayq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42859364, -1.1920929e-07, -1.2314558)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lobby/divider" unique_id=534745826]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby/divider/StaticBody3D" unique_id=1977125933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="divider2" parent="Lobby" unique_id=1507758131 instance=ExtResource("9_4nayq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0753877, -1.1920929e-07, -1.2314558)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lobby/divider2" unique_id=1367179856]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby/divider2/StaticBody3D" unique_id=1869000598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="divider6" parent="Lobby" unique_id=1516725052 instance=ExtResource("9_4nayq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5826843, -1.1920929e-07, -1.2314558)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lobby/divider6" unique_id=1948229189]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby/divider6/StaticBody3D" unique_id=1497890422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="divider7" parent="Lobby" unique_id=1679351273 instance=ExtResource("9_4nayq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.396057, -1.1920929e-07, -0.98322964)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lobby/divider7" unique_id=687528238]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby/divider7/StaticBody3D" unique_id=1982461190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="divider8" parent="Lobby" unique_id=61539150 instance=ExtResource("9_4nayq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1670837, -1.1920929e-07, -0.30300522)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lobby/divider8" unique_id=278210039]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby/divider8/StaticBody3D" unique_id=1722122188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="divider3" parent="Lobby" unique_id=404387776 instance=ExtResource("9_4nayq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.931096, -1.1920929e-07, -1.2314558)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lobby/divider3" unique_id=2004532530]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby/divider3/StaticBody3D" unique_id=442572156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="divider4" parent="Lobby" unique_id=652739249 instance=ExtResource("9_4nayq")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.7454517, -1.1920929e-07, -1.0460148)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lobby/divider4" unique_id=84685377]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby/divider4/StaticBody3D" unique_id=1807150851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="divider5" parent="Lobby" unique_id=157109913 instance=ExtResource("9_4nayq")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.5074027, -3.5762787e-07, -0.36456776)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lobby/divider5" unique_id=209216107]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby/divider5/StaticBody3D" unique_id=153460275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="turnstile" parent="Lobby" unique_id=597974019 instance=ExtResource("10_imrse")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.4382446, -1.1920929e-07, -0.08353615)
+
+[node name="turnstile2" parent="Lobby" unique_id=1776313619 instance=ExtResource("10_imrse")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.6224928, -1.1920929e-07, -0.13677502)

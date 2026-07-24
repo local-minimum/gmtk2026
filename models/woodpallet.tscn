@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cwsw0ps3kvmch"]
+
+[ext_resource type="PackedScene" uid="uid://nhdjkgqemjtw" path="res://models/woodpallet.blend" id="1_07gex"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q6xvv"]
+size = Vector3(0.8030964, 0.1539063, 1.2024987)
+
+[node name="woodpallet" unique_id=974080134 instance=ExtResource("1_07gex")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wood Pallet" parent_id_path=PackedInt32Array(170112685) index="0" unique_id=510099165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015482008, -0.06595314, 0.0012493134)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood Pallet/StaticBody3D" index="0" unique_id=179421990]
+shape = SubResource("BoxShape3D_q6xvv")

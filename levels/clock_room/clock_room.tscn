@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dqd8wvqc38rd7" path="res://models/pedistal.blend" id="11_whos6"]
 [ext_resource type="PackedScene" uid="uid://bnqejtj2hra7y" path="res://models/pole_with_rope.tscn" id="12_5nhsd"]
 [ext_resource type="PackedScene" uid="uid://dj1t8bso4a2ms" path="res://models/divider.blend" id="12_12t2l"]
+[ext_resource type="PackedScene" uid="uid://cwsw0ps3kvmch" path="res://models/woodpallet.tscn" id="14_76efi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wrvij"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -404,6 +405,78 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="pole_with_rope5" parent="Ropes" unique_id=1091953613 instance=ExtResource("12_5nhsd")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0, 1)
+
+[node name="Wood Pallet Stack" type="Node3D" parent="." unique_id=921957004]
+transform = Transform3D(-0.07143896, 0, 0.997445, 0, 1, 0, -0.997445, 0, -0.07143896, -11.106253, 0.14290605, 5.2305565)
+
+[node name="woodpallet" parent="Wood Pallet Stack" unique_id=974080134 instance=ExtResource("14_76efi")]
+
+[node name="woodpallet2" parent="Wood Pallet Stack" unique_id=1950764751 instance=ExtResource("14_76efi")]
+transform = Transform3D(0.998411, 0, 0.05635098, 0, 1, 0, -0.05635098, 0, 0.998411, 0, 0.15494533, 0)
+
+[node name="woodpallet3" parent="Wood Pallet Stack" unique_id=1443435029 instance=ExtResource("14_76efi")]
+transform = Transform3D(0.99992, 0, -0.012642864, 0, 1, 0, 0.012642864, 0, 0.99992, 0, 0.3091787, 0)
+
+[node name="woodpallet4" parent="Wood Pallet Stack" unique_id=712586329 instance=ExtResource("14_76efi")]
+transform = Transform3D(0.99992, 0, -0.012642864, 0, 1, 0, 0.012642864, 0, 0.99992, -0.025559425, 0.46445292, 0)
+
+[node name="woodpallet5" parent="Wood Pallet Stack" unique_id=1758234606 instance=ExtResource("14_76efi")]
+transform = Transform3D(-0.99686795, 0, 0.07908484, 0, 1, 0, -0.07908484, 0, -0.99686795, -0.012759209, 0.61819184, -0.0005054474)
+
+[node name="woodpallet6" parent="Wood Pallet Stack" unique_id=1150729073 instance=ExtResource("14_76efi")]
+transform = Transform3D(-0.99974054, 0, 0.022784688, 0, 1, 0, -0.022784688, 0, -0.99974054, -0.012759209, 0.77313715, -0.0005054474)
+
+[node name="woodpallet7" parent="Wood Pallet Stack" unique_id=1412193955 instance=ExtResource("14_76efi")]
+transform = Transform3D(-0.99578834, 0, 0.09168178, 0, 1, 0, -0.09168178, 0, -0.99578834, -0.012759209, 0.92737055, -0.0005054474)
+
+[node name="woodpallet8" parent="Wood Pallet Stack" unique_id=1096154067 instance=ExtResource("14_76efi")]
+transform = Transform3D(-0.99578834, 0, 0.09168178, 0, 1, 0, -0.09168178, 0, -0.99578834, 0.012720108, 1.0826448, 0.0015163422)
+
+[node name="Wood Pallet Stack3" type="Node3D" parent="." unique_id=2111634094]
+transform = Transform3D(0.043622836, 0, -0.9990481, 0, 1, 0, 0.9990481, 0, 0.043622836, -10.974897, 0.14290605, 7.064562)
+
+[node name="woodpallet" parent="Wood Pallet Stack3" unique_id=769582236 instance=ExtResource("14_76efi")]
+
+[node name="woodpallet2" parent="Wood Pallet Stack3" unique_id=1532047153 instance=ExtResource("14_76efi")]
+transform = Transform3D(0.998411, 0, 0.05635098, 0, 1, 0, -0.05635098, 0, 0.998411, 0, 0.15494533, 0)
+
+[node name="woodpallet3" parent="Wood Pallet Stack3" unique_id=1089598205 instance=ExtResource("14_76efi")]
+transform = Transform3D(-0.99930507, 0, 0.037272654, 0, 1, 0, -0.037272654, 0, -0.99930507, 0.055669308, 0.3091787, -0.0015506744)
+
+[node name="woodpallet4" parent="Wood Pallet Stack3" unique_id=1345546843 instance=ExtResource("14_76efi")]
+transform = Transform3D(0.99992, 0, -0.012642864, 0, 1, 0, 0.012642864, 0, 0.99992, -0.025559425, 0.46445292, 0)
+
+[node name="woodpallet5" parent="Wood Pallet Stack3" unique_id=707121849 instance=ExtResource("14_76efi")]
+transform = Transform3D(-0.99686795, 0, 0.07908484, 0, 1, 0, -0.07908484, 0, -0.99686795, -0.012759209, 0.61819184, -0.0005054474)
+
+[node name="woodpallet6" parent="Wood Pallet Stack3" unique_id=250757657 instance=ExtResource("14_76efi")]
+transform = Transform3D(-0.99974054, 0, 0.022784688, 0, 1, 0, -0.022784688, 0, -0.99974054, -0.012759209, 0.77313715, -0.0005054474)
+
+[node name="woodpallet7" parent="Wood Pallet Stack3" unique_id=1269172019 instance=ExtResource("14_76efi")]
+transform = Transform3D(-0.99578834, 0, 0.09168178, 0, 1, 0, -0.09168178, 0, -0.99578834, -0.032887936, 0.92737055, 5.6266785e-05)
+
+[node name="woodpallet8" parent="Wood Pallet Stack3" unique_id=1660376446 instance=ExtResource("14_76efi")]
+transform = Transform3D(-0.99578834, 0, 0.09168178, 0, 1, 0, -0.09168178, 0, -0.99578834, 0.012720108, 1.0826448, 0.0015163422)
+
+[node name="Wood Pallet Stack2" type="Node3D" parent="." unique_id=1930753943]
+transform = Transform3D(-0.07143896, 0, 0.997445, 0, 1, 0, -0.997445, 0, -0.07143896, -11.042843, 0.14290605, 6.115903)
+
+[node name="woodpallet" parent="Wood Pallet Stack2" unique_id=277269294 instance=ExtResource("14_76efi")]
+
+[node name="woodpallet2" parent="Wood Pallet Stack2" unique_id=508376238 instance=ExtResource("14_76efi")]
+transform = Transform3D(0.9992846, 0, -0.037817195, 0, 1, 0, 0.037817195, 0, 0.9992846, 0, 0.15494533, 0)
+
+[node name="woodpallet3" parent="Wood Pallet Stack2" unique_id=1776066082 instance=ExtResource("14_76efi")]
+transform = Transform3D(0.99992, 0, -0.012642864, 0, 1, 0, 0.012642864, 0, 0.99992, 0, 0.3091787, 0)
+
+[node name="woodpallet4" parent="Wood Pallet Stack2" unique_id=1008487708 instance=ExtResource("14_76efi")]
+transform = Transform3D(0.99992, 0, -0.012642864, 0, 1, 0, 0.012642864, 0, 0.99992, -0.025559425, 0.46445292, 0)
+
+[node name="woodpallet5" parent="Wood Pallet Stack2" unique_id=437897085 instance=ExtResource("14_76efi")]
+transform = Transform3D(-0.99827427, 0, -0.058725424, 0, 1, 0, 0.058725424, 0, -0.99827427, -0.012759209, 0.61819184, -0.0005054474)
+
+[node name="woodpallet6" parent="Wood Pallet Stack2" unique_id=2035524331 instance=ExtResource("14_76efi")]
+transform = Transform3D(-0.99974054, 0, 0.022784688, 0, 1, 0, -0.022784688, 0, -0.99974054, -0.012759209, 0.77313715, -0.0005054474)
 
 [editable path="Ropes/only_pole"]
 [editable path="Ropes/only_pole2"]

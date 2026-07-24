@@ -1,0 +1,12 @@
+# Blender 5.2.0 LTS MTL File: 'minigolf.blend'
+# www.blender.org
+
+newmtl Ball
+Ns 464.074005
+Ka 0.129450 0.129450 0.129450
+Kd 0.214931 0.509600 0.605359
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
