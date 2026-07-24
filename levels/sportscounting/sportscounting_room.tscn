@@ -45,6 +45,9 @@ size = Vector3(0.1, 2.7, 22)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ju16"]
 size = Vector3(0.1, 2.7, 22)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kr4f2"]
+size = Vector3(7.5, 2.2, 0.1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
 size = Vector3(1.5, 2.2, 0.1)
 
@@ -224,6 +227,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9719231, -1.8849969e-06, -
 
 [node name="divider12" parent="darts" unique_id=1559090723 instance=ExtResource("9_p5ucv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5280769, -1.8849969e-06, -0.076583385)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="darts/divider12" unique_id=351809312]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="darts/divider12/StaticBody3D" unique_id=1848892706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="divider13" parent="darts" unique_id=930516689 instance=ExtResource("9_p5ucv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0280771, -1.8849969e-06, -0.076583385)
