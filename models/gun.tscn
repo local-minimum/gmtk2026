@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ulec4guhv528"]
+
+[ext_resource type="PackedScene" uid="uid://bp58yfcom8ag" path="res://models/gun.blend" id="1_6ayjc"]
+[ext_resource type="Script" uid="uid://bqt814rgie0xb" path="res://models/gun.gd" id="2_2rl8p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaxb6"]
+albedo_color = Color(0.5585697, 0.5422467, 0.5547508, 1)
+metallic = 0.33
+roughness = 0.86
+emission = Color(0.54509807, 0.09803922, 0.105882354, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ayjc"]
+albedo_color = Color(0.54509807, 0.09803922, 0.105882354, 1)
+metallic = 0.33
+roughness = 0.86
+emission_enabled = true
+emission = Color(0.54509807, 0.09803922, 0.105882354, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rl8p"]
+albedo_color = Color(0.6862745, 0.29803923, 0.050980393, 1)
+metallic = 0.33
+roughness = 0.86
+emission_enabled = true
+emission = Color(0.6862745, 0.29803923, 0.050980393, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0lrid"]
+albedo_color = Color(0.40784314, 0.7058824, 0.078431375, 1)
+metallic = 0.33
+roughness = 0.86
+emission_enabled = true
+emission = Color(0.40784314, 0.7058824, 0.078431375, 1)
+
+[node name="gun" unique_id=680091669 node_paths=PackedStringArray("lamps") instance=ExtResource("1_6ayjc")]
+script = ExtResource("2_2rl8p")
+lamps = [NodePath("Lamp 1"), NodePath("Lamp 2"), NodePath("Lamp 3")]
+lampMaterials = Array[Material]([SubResource("StandardMaterial3D_iaxb6"), SubResource("StandardMaterial3D_6ayjc"), SubResource("StandardMaterial3D_2rl8p"), SubResource("StandardMaterial3D_0lrid")])

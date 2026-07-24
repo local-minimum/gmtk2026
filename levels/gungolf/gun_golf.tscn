@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dqd8wvqc38rd7" path="res://models/pedistal.blend" id="8_yuym2"]
 [ext_resource type="PackedScene" uid="uid://dj1t8bso4a2ms" path="res://models/divider.blend" id="9_4nayq"]
 [ext_resource type="PackedScene" uid="uid://dmyp804sexrd7" path="res://models/turnstile.tscn" id="10_imrse"]
+[ext_resource type="PackedScene" uid="uid://dev0dyg4x4c88" path="res://ui/pointer/pointer.tscn" id="11_4nayq"]
+[ext_resource type="PackedScene" uid="uid://ulec4guhv528" path="res://models/gun.tscn" id="12_imrse"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1udsw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -338,3 +340,9 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.4
 
 [node name="turnstile2" parent="Lobby" unique_id=1776313619 instance=ExtResource("10_imrse")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.6224928, -1.1920929e-07, -0.13677502)
+
+[node name="Pointer" parent="." unique_id=795342930 instance=ExtResource("11_4nayq")]
+
+[node name="gun" parent="." unique_id=680091669 instance=ExtResource("12_imrse")]
+transform = Transform3D(0.011700827, -0.4578253, 0.8889653, 0.9954121, 0.08976289, 0.03312682, -0.094962336, 0.8844991, 0.45677507, -2.558742, 1.2636396, 8.920908)
+live = true
