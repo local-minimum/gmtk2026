@@ -10,8 +10,9 @@ config_version=5
 
 [application]
 
-config/name="gmtk2026"
-run/main_scene="uid://hs8g7nlk5cw4"
+config/name="The Entrepreneur"
+config/version="0.1"
+run/main_scene="uid://clgl7ta0h7i3s"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

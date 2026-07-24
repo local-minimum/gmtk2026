@@ -99,7 +99,7 @@ size = Vector3(0.5, 1.5, 0.5)
 [node name="darts" unique_id=987914503 instance=ExtResource("1_q2df0")]
 
 [node name="Cabinett" parent="." index="0" unique_id=1965311749]
-transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, -0.3, 0, 0.3, -1.3113417e-08, 0, 1.8985825, 0)
+transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, -0.3, 0, 0.3, -1.3113417e-08, 0, 1.4326427, 0)
 
 [node name="Num 20" type="Label3D" parent="Cabinett/Board" parent_id_path=PackedInt32Array(1564321979) index="0" unique_id=96955534]
 transform = Transform3D(0.99999976, 8.742273e-08, 8.742273e-08, -8.742272e-08, 4.3711307e-08, 0.99999976, 8.7422734e-08, -0.99999976, 4.371132e-08, 0, 0.09681355, -1.7312746)
