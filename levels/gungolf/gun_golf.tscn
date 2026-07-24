@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dev0dyg4x4c88" path="res://ui/pointer/pointer.tscn" id="11_4nayq"]
 [ext_resource type="Script" uid="uid://cy6cfgvk0lr2b" path="res://levels/gungolf/pickup_gun_action.gd" id="11_kjgfd"]
 [ext_resource type="PackedScene" uid="uid://ulec4guhv528" path="res://models/gun.tscn" id="12_imrse"]
+[ext_resource type="Script" uid="uid://7amk3taod1tn" path="res://addons/minimum_convenience/scripts/line3d/line3d.gd" id="15_4al45"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1udsw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -56,6 +57,17 @@ radius = 0.1696224
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
 size = Vector3(1.5, 2.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvn44"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0, 0.75686276, 0.7607843, 0.67058825)
+metallic = 0.75
+roughness = 0.35
+emission_enabled = true
+emission = Color(0.8666667, 0.48235294, 0.4745098, 1)
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_kjfgv"]
 
 [node name="Gun Golf" type="Node3D" unique_id=1420092677]
 
@@ -268,9 +280,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7382822, 2.3841858e-07, -0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6280212, 0)
 shape = SubResource("BoxShape3D_yuym2")
 
-[node name="gun" parent="Lobby/pedistal" unique_id=680091669 instance=ExtResource("12_imrse")]
+[node name="gun" parent="Lobby/pedistal" unique_id=680091669 node_paths=PackedStringArray("player", "bullets", "line3d") instance=ExtResource("12_imrse")]
 transform = Transform3D(0.011700827, -0.4578253, 0.8889653, 0.9954121, 0.08976289, 0.03312682, -0.094962336, 0.8844991, 0.45677507, 0.07125735, 1.2636393, 0.04941082)
+player = NodePath("../../../Player")
 live = true
+bullets = NodePath("../../../Bullets")
+projectile_speed = 50.0
+line3d = NodePath("../../../ProjectileTrails")
 
 [node name="Gun Interactable" type="StaticBody3D" parent="Lobby/pedistal" unique_id=265794847 node_paths=PackedStringArray("action")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.077703, 1.2669362, 0)
@@ -369,3 +385,15 @@ live = false
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.6224928, -1.1920929e-07, -0.13677502)
 
 [node name="Pointer" parent="." unique_id=795342930 instance=ExtResource("11_4nayq")]
+
+[node name="ProjectileTrails" type="MeshInstance3D" parent="." unique_id=689155051]
+material_override = SubResource("StandardMaterial3D_bvn44")
+mesh = SubResource("ImmediateMesh_kjfgv")
+script = ExtResource("15_4al45")
+start_thickness = 0.02
+end_thickness = 0.02
+corner_smooth = 3
+cap_smooth = 0
+metadata/_custom_type_script = "uid://7amk3taod1tn"
+
+[node name="Bullets" type="Node3D" parent="." unique_id=1563050617]

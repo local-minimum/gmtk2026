@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cjm35gb6kjavy"]
+
+[ext_resource type="Shader" uid="uid://bxyemdfcj5008" path="res://shaders/decal.gdshader" id="1_vruar"]
+[ext_resource type="Texture2D" uid="uid://bg0voj5ep7olg" path="res://ui/cross.svg" id="2_uh0kt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dhhxa"]
+render_priority = 1
+shader = ExtResource("1_vruar")
+shader_parameter/Scale = Vector2(1, 1)
+shader_parameter/Albedo = ExtResource("2_uh0kt")
+shader_parameter/Albedo_Mix = 0.20000000298024
+shader_parameter/Emission_Energy = 0.0
+shader_parameter/Modulate = Color(1, 1, 1, 1)
+shader_parameter/Modulate_Emission = Color(1, 1, 1, 1)
+shader_parameter/cube_half_size = 0.5
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_kjfgv"]
+material = SubResource("ShaderMaterial_dhhxa")
+
+[node name="Bullet Wound" type="MeshInstance3D" unique_id=1474589321]
+mesh = SubResource("BoxMesh_kjfgv")

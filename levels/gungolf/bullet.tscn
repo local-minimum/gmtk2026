@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://d5gvahlqmbby"]
+
+[ext_resource type="Script" uid="uid://butfjosytj2ja" path="res://levels/gungolf/projectile.gd" id="1_k2f03"]
+[ext_resource type="PackedScene" uid="uid://cjm35gb6kjavy" path="res://levels/gungolf/bullet_wound.tscn" id="2_6kp6n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6kp6n"]
+friction = 0.9
+bounce = 0.01
+absorbent = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kjfgv"]
+radius = 0.015
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_anl6e"]
+albedo_color = Color(0.02745098, 0.07058824, 0.1882353, 1)
+metallic = 0.5
+roughness = 0.8
+
+[sub_resource type="SphereMesh" id="SphereMesh_kjfgv"]
+material = SubResource("StandardMaterial3D_anl6e")
+radius = 0.015
+height = 0.03
+radial_segments = 16
+rings = 12
+
+[node name="Bullet" type="RigidBody3D" unique_id=1876509857]
+process_priority = 1000
+process_physics_priority = 1000
+physics_interpolation_mode = 1
+collision_layer = 3
+input_ray_pickable = false
+mass = 0.015
+physics_material_override = SubResource("PhysicsMaterial_6kp6n")
+gravity_scale = 0.5
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_k2f03")
+decal = ExtResource("2_6kp6n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=777869574]
+shape = SubResource("SphereShape3D_kjfgv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1017685803]
+mesh = SubResource("SphereMesh_kjfgv")

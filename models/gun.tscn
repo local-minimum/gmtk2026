@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bp58yfcom8ag" path="res://models/gun.blend" id="1_6ayjc"]
 [ext_resource type="Script" uid="uid://bqt814rgie0xb" path="res://models/gun.gd" id="2_2rl8p"]
+[ext_resource type="PackedScene" uid="uid://d5gvahlqmbby" path="res://levels/gungolf/bullet.tscn" id="3_2rl8p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaxb6"]
 albedo_color = Color(0.5585697, 0.5422467, 0.5547508, 1)
@@ -30,7 +31,16 @@ roughness = 0.86
 emission_enabled = true
 emission = Color(0.40784314, 0.7058824, 0.078431375, 1)
 
-[node name="gun" unique_id=680091669 node_paths=PackedStringArray("lamps") instance=ExtResource("1_6ayjc")]
+[node name="gun" unique_id=680091669 node_paths=PackedStringArray("lamps", "projectile_spawn", "projectile_aim") instance=ExtResource("1_6ayjc")]
 script = ExtResource("2_2rl8p")
 lamps = [NodePath("Lamp 1"), NodePath("Lamp 2"), NodePath("Lamp 3")]
 lampMaterials = Array[Material]([SubResource("StandardMaterial3D_iaxb6"), SubResource("StandardMaterial3D_6ayjc"), SubResource("StandardMaterial3D_2rl8p"), SubResource("StandardMaterial3D_0lrid")])
+projectile = ExtResource("3_2rl8p")
+projectile_spawn = NodePath("BulletSpawn")
+projectile_aim = NodePath("BulletExit")
+
+[node name="BulletExit" type="Node3D" parent="." index="4" unique_id=1259742177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041902605, -0.12357332)
+
+[node name="BulletSpawn" type="Node3D" parent="." index="5" unique_id=322496104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041902605, 0.04243973)
