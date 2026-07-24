@@ -44,6 +44,9 @@ signal on_look_at_object(obj: Node3D, offset: Vector3, cinematic_follow: Cinemat
 signal on_unlook_at_object(obj: Node3D, ease_time: float, callback: Variant)
 
 
+# Rooms
+signal on_room_completed()
+
 # Clock Room
 signal on_count_down_room_press_big_button(press_count: int)
 

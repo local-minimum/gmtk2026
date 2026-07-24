@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dev0dyg4x4c88" path="res://ui/pointer/pointer.tscn" id="7_n28xw"]
 [ext_resource type="Script" uid="uid://cq1lh5koik8h1" path="res://levels/clock_room/clock_game.gd" id="10_xeh14"]
 [ext_resource type="PackedScene" uid="uid://dmyp804sexrd7" path="res://models/turnstile.tscn" id="11_5nhsd"]
+[ext_resource type="Script" uid="uid://fpforrfkhcbf" path="res://levels/leave_area.gd" id="11_12t2l"]
 [ext_resource type="PackedScene" uid="uid://dqd8wvqc38rd7" path="res://models/pedistal.blend" id="11_whos6"]
 [ext_resource type="PackedScene" uid="uid://bnqejtj2hra7y" path="res://models/pole_with_rope.tscn" id="12_5nhsd"]
 [ext_resource type="PackedScene" uid="uid://dj1t8bso4a2ms" path="res://models/divider.blend" id="12_12t2l"]
@@ -49,6 +50,9 @@ size = Vector3(0.1, 2.7, 22)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_76efi"]
 size = Vector3(0.1, 2.7, 22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7sa57"]
+size = Vector3(2, 2, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kr4f2"]
 size = Vector3(16, 2.2, 0.1)
@@ -120,57 +124,6 @@ metadata/_custom_type_script = "uid://ccassu3xit5vq"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pedistal/StaticBody3D" unique_id=2029343959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6336975, 0)
 shape = SubResource("BoxShape3D_0ltmj")
-
-[node name="pole_with_rope" parent="." unique_id=1189923521 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(0.99996555, 0, 0.008299473, 0, 1, 0, -0.008299473, 0, 0.99996555, -1.0588489, 0, 0.008630574)
-
-[node name="pole_with_rope2" parent="." unique_id=1294244078 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(0.015999783, 0, 0.99987197, 0, 1, 0, -0.99987197, 0, 0.015999783, -3, 0, 0.07264)
-
-[node name="pole_with_rope3" parent="." unique_id=148828959 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 0, 1)
-
-[node name="pole_with_rope6" parent="." unique_id=945247178 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3, 0, 2)
-
-[node name="pole_with_rope7" parent="." unique_id=1978657924 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 0, 2)
-
-[node name="only_pole" parent="." unique_id=1549545695 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 0, 2)
-
-[node name="Rope" parent="only_pole/Pole" parent_id_path=PackedInt32Array(1549545695, 2049153138) index="0" unique_id=466324247]
-visible = false
-
-[node name="CollisionShape3D2" parent="only_pole/Pole/StaticBody3D" parent_id_path=PackedInt32Array(1549545695, 183407408) index="1" unique_id=345884960]
-disabled = true
-
-[node name="only_pole2" parent="." unique_id=1268237189 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, 0, 1)
-
-[node name="Rope" parent="only_pole2/Pole" parent_id_path=PackedInt32Array(1268237189, 2049153138) index="0" unique_id=466324247]
-visible = false
-
-[node name="CollisionShape3D2" parent="only_pole2/Pole/StaticBody3D" parent_id_path=PackedInt32Array(1268237189, 183407408) index="1" unique_id=345884960]
-disabled = true
-
-[node name="pole_with_rope10" parent="." unique_id=1402767740 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 3)
-
-[node name="pole_with_rope11" parent="." unique_id=2072830763 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 0, 3)
-
-[node name="pole_with_rope8" parent="." unique_id=1587509668 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 2, 0, 3)
-
-[node name="pole_with_rope9" parent="." unique_id=1816539408 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -3.0413926, 0, 3.9503107)
-
-[node name="pole_with_rope4" parent="." unique_id=1127736608 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 1)
-
-[node name="pole_with_rope5" parent="." unique_id=1091953613 instance=ExtResource("12_5nhsd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0, 1)
 
 [node name="turnstile" parent="." unique_id=597974019 instance=ExtResource("11_5nhsd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.257861, -4.7683716e-07, 2.3864374)
@@ -250,94 +203,207 @@ mesh = SubResource("BoxMesh_12t2l")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D7/StaticBody3D" unique_id=1375820813]
 shape = SubResource("BoxShape3D_76efi")
 
-[node name="divider" parent="." unique_id=1326223464 instance=ExtResource("12_12t2l")]
+[node name="Leave Area" type="Area3D" parent="." unique_id=1205837722 node_paths=PackedStringArray("player", "notes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 20)
+collision_mask = 3
+input_ray_pickable = false
+script = ExtResource("11_12t2l")
+player = NodePath("../Player")
+next_scene = "uid://qoauc2qneyac"
+notes = [NodePath("Label3D"), NodePath("Label3D2"), NodePath("Label3D4"), NodePath("Label3D5"), NodePath("Label3D3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leave Area" unique_id=51447114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+shape = SubResource("BoxShape3D_7sa57")
+
+[node name="Label3D" type="Label3D" parent="Leave Area" unique_id=359680314]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, 0.5350208)
+double_sided = false
+modulate = Color(1, 0.654902, 1, 1)
+text = "I SHOULD GIVE THIS
+EXPERIENCE A
+CHANCE BEFORE
+LEAVING."
+
+[node name="Label3D2" type="Label3D" parent="Leave Area" unique_id=369548463]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.94769204, 1, -0.46497917)
+double_sided = false
+modulate = Color(1, 0.654902, 1, 1)
+text = "I SHOULD GIVE THIS
+EXPERIENCE A
+CHANCE BEFORE
+LEAVING."
+
+[node name="Label3D4" type="Label3D" parent="Leave Area" unique_id=929693757]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0.93999517, 1, -0.46497917)
+double_sided = false
+modulate = Color(1, 0.654902, 1, 1)
+text = "I SHOULD GIVE THIS
+EXPERIENCE A
+CHANCE BEFORE
+LEAVING."
+
+[node name="Label3D5" type="Label3D" parent="Leave Area" unique_id=2113697998]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0.93999517, 1, -2.4649792)
+double_sided = false
+modulate = Color(1, 0.654902, 1, 1)
+text = "I SHOULD GIVE THIS
+EXPERIENCE A
+CHANCE BEFORE
+LEAVING."
+
+[node name="Label3D3" type="Label3D" parent="Leave Area" unique_id=2041752251]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.94769204, 1, -2.4649792)
+double_sided = false
+modulate = Color(1, 0.654902, 1, 1)
+text = "I SHOULD GIVE THIS
+EXPERIENCE A
+CHANCE BEFORE
+LEAVING."
+
+[node name="Dividers" type="Node3D" parent="." unique_id=2112749675]
+
+[node name="divider" parent="Dividers" unique_id=1326223464 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.3503547, -9.313226e-07, 9.660097)
 
-[node name="divider2" parent="." unique_id=1800651540 instance=ExtResource("12_12t2l")]
+[node name="divider2" parent="Dividers" unique_id=1800651540 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.3503547, -9.313226e-07, 8.060097)
 
-[node name="divider3" parent="." unique_id=1297519940 instance=ExtResource("12_12t2l")]
+[node name="divider3" parent="Dividers" unique_id=1297519940 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.3503547, -9.313226e-07, 6.460097)
 
-[node name="divider4" parent="." unique_id=1316834105 instance=ExtResource("12_12t2l")]
+[node name="divider4" parent="Dividers" unique_id=1316834105 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.3503547, -9.313226e-07, 4.860097)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="divider4" unique_id=2052550833]
+[node name="StaticBody3D" type="StaticBody3D" parent="Dividers/divider4" unique_id=2052550833]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="divider4/StaticBody3D" unique_id=181131674]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dividers/divider4/StaticBody3D" unique_id=181131674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
 shape = SubResource("BoxShape3D_kr4f2")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="divider4/StaticBody3D" unique_id=105378685]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Dividers/divider4/StaticBody3D" unique_id=105378685]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.799999, 1, -8)
 shape = SubResource("BoxShape3D_kr4f2")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="divider4/StaticBody3D" unique_id=28234314]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Dividers/divider4/StaticBody3D" unique_id=28234314]
 transform = Transform3D(-0.7071069, 0, -0.7071069, 0, 1, 0, 0.7071069, 0, -0.7071069, -7.8999996, 1, -12.699999)
 shape = SubResource("BoxShape3D_12t2l")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="divider4/StaticBody3D" unique_id=1338533657]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Dividers/divider4/StaticBody3D" unique_id=1338533657]
 transform = Transform3D(-0.5, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.5, -3.4999995, 1, -12.499998)
 shape = SubResource("BoxShape3D_12t2l")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="divider4/StaticBody3D" unique_id=136493466]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Dividers/divider4/StaticBody3D" unique_id=136493466]
 transform = Transform3D(-4.569558e-08, 0, -1, 0, 1, 0, 1, 0, -4.569558e-08, -3.7999992, 1, -11.099997)
 shape = SubResource("BoxShape3D_12t2l")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="divider4/StaticBody3D" unique_id=1826231787]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Dividers/divider4/StaticBody3D" unique_id=1826231787]
 transform = Transform3D(-4.569558e-08, 0, -1, 0, 1, 0, 1, 0, -4.569558e-08, -3.799999, 1, -9.499996)
 shape = SubResource("BoxShape3D_12t2l")
 
-[node name="divider5" parent="." unique_id=1496017861 instance=ExtResource("12_12t2l")]
+[node name="divider5" parent="Dividers" unique_id=1496017861 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.3503547, -9.313226e-07, 3.260097)
 
-[node name="divider6" parent="." unique_id=787122980 instance=ExtResource("12_12t2l")]
+[node name="divider6" parent="Dividers" unique_id=787122980 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.3503547, -9.313226e-07, 1.660097)
 
-[node name="divider7" parent="." unique_id=570195925 instance=ExtResource("12_12t2l")]
+[node name="divider7" parent="Dividers" unique_id=570195925 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.3503547, -9.313226e-07, 0.06009674)
 
-[node name="divider8" parent="." unique_id=337389717 instance=ExtResource("12_12t2l")]
+[node name="divider8" parent="Dividers" unique_id=337389717 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.3503547, -9.313226e-07, -1.5399036)
 
-[node name="divider9" parent="." unique_id=455737169 instance=ExtResource("12_12t2l")]
+[node name="divider9" parent="Dividers" unique_id=455737169 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.3503547, -9.313226e-07, -3.1399035)
 
-[node name="divider10" parent="." unique_id=1580922445 instance=ExtResource("12_12t2l")]
+[node name="divider10" parent="Dividers" unique_id=1580922445 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.4503546, -9.313226e-07, -3.9399035)
 
-[node name="divider11" parent="." unique_id=285044298 instance=ExtResource("12_12t2l")]
+[node name="divider11" parent="Dividers" unique_id=285044298 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.85035455, -9.313226e-07, -3.9399035)
 
-[node name="divider12" parent="." unique_id=281439631 instance=ExtResource("12_12t2l")]
+[node name="divider12" parent="Dividers" unique_id=281439631 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.7496455, -9.313226e-07, -3.9399035)
 
-[node name="divider13" parent="." unique_id=926471983 instance=ExtResource("12_12t2l")]
+[node name="divider13" parent="Dividers" unique_id=926471983 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.3496456, -9.313226e-07, -3.9399035)
 
-[node name="divider14" parent="." unique_id=548348064 instance=ExtResource("12_12t2l")]
+[node name="divider14" parent="Dividers" unique_id=548348064 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.9496455, -9.313226e-07, -3.9399035)
 
-[node name="divider15" parent="." unique_id=1722556984 instance=ExtResource("12_12t2l")]
+[node name="divider15" parent="Dividers" unique_id=1722556984 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.5496454, -9.313226e-07, -3.9399035)
 
-[node name="divider16" parent="." unique_id=123392399 instance=ExtResource("12_12t2l")]
+[node name="divider16" parent="Dividers" unique_id=123392399 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.1496453, -9.313226e-07, -3.9399035)
 
-[node name="divider17" parent="." unique_id=1896201788 instance=ExtResource("12_12t2l")]
+[node name="divider17" parent="Dividers" unique_id=1896201788 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8.749645, -9.313226e-07, -3.9399035)
 
-[node name="divider19" parent="." unique_id=232961070 instance=ExtResource("12_12t2l")]
+[node name="divider19" parent="Dividers" unique_id=232961070 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.1496453, -9.313226e-07, 1.0600965)
 
-[node name="divider20" parent="." unique_id=160995235 instance=ExtResource("12_12t2l")]
+[node name="divider20" parent="Dividers" unique_id=160995235 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.749645, -9.313226e-07, 1.0600965)
 
-[node name="divider21" parent="." unique_id=1052312997 instance=ExtResource("12_12t2l")]
+[node name="divider21" parent="Dividers" unique_id=1052312997 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-0.8660253, 0, 0.50000006, 0, 1, 0, -0.50000006, 0, -0.8660253, 9.149645, -9.313226e-07, 1.3600965)
 
-[node name="divider18" parent="." unique_id=1539112773 instance=ExtResource("12_12t2l")]
+[node name="divider18" parent="Dividers" unique_id=1539112773 instance=ExtResource("12_12t2l")]
 transform = Transform3D(-0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, -0.7071067, 9.349646, -9.313226e-07, -3.0399034)
 
-[editable path="only_pole"]
-[editable path="only_pole2"]
+[node name="Ropes" type="Node3D" parent="." unique_id=2135898149]
+
+[node name="pole_with_rope" parent="Ropes" unique_id=1189923521 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(0.99996555, 0, 0.008299473, 0, 1, 0, -0.008299473, 0, 0.99996555, -1.0588489, 0, 0.008630574)
+
+[node name="pole_with_rope2" parent="Ropes" unique_id=1294244078 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(0.015999783, 0, 0.99987197, 0, 1, 0, -0.99987197, 0, 0.015999783, -3, 0, 0.07264)
+
+[node name="pole_with_rope3" parent="Ropes" unique_id=148828959 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 0, 1)
+
+[node name="pole_with_rope6" parent="Ropes" unique_id=945247178 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3, 0, 2)
+
+[node name="pole_with_rope7" parent="Ropes" unique_id=1978657924 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 0, 2)
+
+[node name="only_pole" parent="Ropes" unique_id=1549545695 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 0, 2)
+
+[node name="Rope" parent="Ropes/only_pole/Pole" parent_id_path=PackedInt32Array(1549545695, 2049153138) index="0" unique_id=466324247]
+visible = false
+
+[node name="CollisionShape3D2" parent="Ropes/only_pole/Pole/StaticBody3D" parent_id_path=PackedInt32Array(1549545695, 183407408) index="1" unique_id=345884960]
+disabled = true
+
+[node name="only_pole2" parent="Ropes" unique_id=1268237189 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, 0, 1)
+
+[node name="Rope" parent="Ropes/only_pole2/Pole" parent_id_path=PackedInt32Array(1268237189, 2049153138) index="0" unique_id=466324247]
+visible = false
+
+[node name="CollisionShape3D2" parent="Ropes/only_pole2/Pole/StaticBody3D" parent_id_path=PackedInt32Array(1268237189, 183407408) index="1" unique_id=345884960]
+disabled = true
+
+[node name="pole_with_rope10" parent="Ropes" unique_id=1402767740 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 3)
+
+[node name="pole_with_rope11" parent="Ropes" unique_id=2072830763 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 0, 3)
+
+[node name="pole_with_rope8" parent="Ropes" unique_id=1587509668 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 2, 0, 3)
+
+[node name="pole_with_rope9" parent="Ropes" unique_id=1816539408 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -3.0413926, 0, 3.9503107)
+
+[node name="pole_with_rope4" parent="Ropes" unique_id=1127736608 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 1)
+
+[node name="pole_with_rope5" parent="Ropes" unique_id=1091953613 instance=ExtResource("12_5nhsd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0, 1)
+
+[editable path="Ropes/only_pole"]
+[editable path="Ropes/only_pole2"]

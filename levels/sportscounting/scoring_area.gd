@@ -21,3 +21,4 @@ func _handle_body_entered(body: Node3D) -> void:
     SignalBus.on_check_score.emit()
     await get_tree().create_timer(3.0).timeout
     player.remove_cinematic_reason(self)
+    SignalBus.on_room_completed.emit()

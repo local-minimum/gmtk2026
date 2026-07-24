@@ -68,6 +68,7 @@ func _handle_count() -> void:
 
     _phase = GamePhase.ENDED
     clock.current_value = -1
+    SignalBus.on_room_completed.emit()
 
 func _show_clock() -> void:
     clock.off = false
@@ -80,3 +81,4 @@ func _stop_clock() -> void:
         return
 
     _phase = GamePhase.PLAYER_STOPPED
+    SignalBus.on_room_completed.emit()
