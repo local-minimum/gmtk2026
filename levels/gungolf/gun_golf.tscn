@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnt7brlt3uhf8" path="res://common/adjustable_world_environment.gd" id="1_21ycd"]
 [ext_resource type="PackedScene" uid="uid://60mxtlvkhokn" path="res://levels/player.tscn" id="2_rc52x"]
+[ext_resource type="Script" uid="uid://fpforrfkhcbf" path="res://levels/leave_area.gd" id="3_rc52x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1udsw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -32,6 +33,9 @@ size = Vector3(0.1, 2.7, 22)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4nayq"]
 size = Vector3(0.1, 2.7, 22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1udsw"]
+size = Vector3(2, 2, 4)
 
 [node name="Gun Golf" type="Node3D" unique_id=1420092677]
 
@@ -129,3 +133,61 @@ shape = SubResource("BoxShape3D_4nayq")
 
 [node name="Player" parent="." unique_id=1942068578 instance=ExtResource("2_rc52x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0, 19.00207)
+
+[node name="Leave Area" type="Area3D" parent="." unique_id=1130581261 node_paths=PackedStringArray("player", "notes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 20)
+collision_mask = 3
+input_ray_pickable = false
+script = ExtResource("3_rc52x")
+player = NodePath("../Player")
+next_scene = "uid://meoyfx1l5spe"
+notes = [NodePath("Label3D"), NodePath("Label3D2"), NodePath("Label3D4"), NodePath("Label3D5"), NodePath("Label3D3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Leave Area" unique_id=1929247195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+shape = SubResource("BoxShape3D_1udsw")
+
+[node name="Label3D" type="Label3D" parent="Leave Area" unique_id=421747807]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, 0.5350208)
+double_sided = false
+modulate = Color(1, 0.654902, 1, 1)
+text = "I SHOULD GIVE THIS
+EXPERIENCE A
+CHANCE BEFORE
+LEAVING."
+
+[node name="Label3D2" type="Label3D" parent="Leave Area" unique_id=1572300242]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.94769204, 1, -0.46497917)
+double_sided = false
+modulate = Color(1, 0.654902, 1, 1)
+text = "I SHOULD GIVE THIS
+EXPERIENCE A
+CHANCE BEFORE
+LEAVING."
+
+[node name="Label3D4" type="Label3D" parent="Leave Area" unique_id=1331027483]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0.93999517, 1, -0.46497917)
+double_sided = false
+modulate = Color(1, 0.654902, 1, 1)
+text = "I SHOULD GIVE THIS
+EXPERIENCE A
+CHANCE BEFORE
+LEAVING."
+
+[node name="Label3D5" type="Label3D" parent="Leave Area" unique_id=927676718]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0.93999517, 1, -2.4649792)
+double_sided = false
+modulate = Color(1, 0.654902, 1, 1)
+text = "I SHOULD GIVE THIS
+EXPERIENCE A
+CHANCE BEFORE
+LEAVING."
+
+[node name="Label3D3" type="Label3D" parent="Leave Area" unique_id=1732583131]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.94769204, 1, -2.4649792)
+double_sided = false
+modulate = Color(1, 0.654902, 1, 1)
+text = "I SHOULD GIVE THIS
+EXPERIENCE A
+CHANCE BEFORE
+LEAVING."
