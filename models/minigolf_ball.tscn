@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ds4fswtmigsdp"]
+
+[ext_resource type="PackedScene" uid="uid://d3ilo3humj6rw" path="res://models/minigolf_ball.glb" id="1_yp6ab"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yp6ab"]
+friction = 0.6
+bounce = 0.7
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kjfgv"]
+radius = 0.03351293
+
+[node name="Ball" type="RigidBody3D" unique_id=399272331]
+collision_layer = 9
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_yp6ab")
+gravity_scale = 2.0
+continuous_cd = true
+
+[node name="minigolf_ball" parent="." unique_id=1130202477 instance=ExtResource("1_yp6ab")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1964902452]
+shape = SubResource("SphereShape3D_kjfgv")

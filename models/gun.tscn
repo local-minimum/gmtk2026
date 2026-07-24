@@ -35,6 +35,7 @@ emission = Color(0.40784314, 0.7058824, 0.078431375, 1)
 script = ExtResource("2_2rl8p")
 lamps = [NodePath("Lamp 1"), NodePath("Lamp 2"), NodePath("Lamp 3")]
 lampMaterials = Array[Material]([SubResource("StandardMaterial3D_iaxb6"), SubResource("StandardMaterial3D_6ayjc"), SubResource("StandardMaterial3D_2rl8p"), SubResource("StandardMaterial3D_0lrid")])
+step_length = 1.0
 projectile = ExtResource("3_2rl8p")
 projectile_spawn = NodePath("BulletSpawn")
 projectile_aim = NodePath("BulletExit")

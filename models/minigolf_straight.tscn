@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cfhcf2xswh2cw"]
 
 [ext_resource type="PackedScene" uid="uid://de6wrwjqiknx5" path="res://models/minigolf_straight.glb" id="1_rae83"]
+[ext_resource type="PhysicsMaterial" uid="uid://1qhmcpb67q36" path="res://models/gloftrack_physics_material.tres" id="2_ycnfs"]
+[ext_resource type="PhysicsMaterial" uid="uid://bm5m5j5s6loms" path="res://models/golftrack_ground_physics_material.tres" id="3_pa4y2"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ycnfs"]
 data = PackedVector3Array(-0.69119996, 0.19999999, -1, -0.75, 0.19999999, 1, -0.75, 0.19999999, -1, -0.69119996, 0.19999999, -1, -0.69119996, 0.19999999, 1, -0.75, 0.19999999, 1, -0.75, 0.049999997, -1, -0.75, 0.19999999, 1, -0.75, 0.049999997, 1, -0.75, 0.049999997, -1, -0.75, 0.19999999, -1, -0.75, 0.19999999, 1, -0.69119996, 0.049999997, -1, -0.75, 0.19999999, -1, -0.75, 0.049999997, -1, -0.69119996, 0.049999997, -1, -0.69119996, 0.19999999, -1, -0.75, 0.19999999, -1, -0.75, 0.049999997, 1, -0.69119996, 0.19999999, 1, -0.69119996, 0.049999997, 1, -0.75, 0.049999997, 1, -0.75, 0.19999999, 1, -0.69119996, 0.19999999, 1, -0.69119996, 0.049999997, 1, -0.69119996, 0.19999999, -1, -0.69119996, 0.049999997, -1, -0.69119996, 0.049999997, 1, -0.69119996, 0.19999999, 1, -0.69119996, 0.19999999, -1)
@@ -14,16 +16,19 @@ data = PackedVector3Array(-0.75, -0.14999999, 1, -0.75, 0.049999997, -1, -0.75, 
 [node name="minigolf_straight" unique_id=1054106383 instance=ExtResource("1_rae83")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Base Track/Side" parent_id_path=PackedInt32Array(1231417480) index="0" unique_id=2039972002]
+physics_material_override = ExtResource("2_ycnfs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Base Track/Side/StaticBody3D" index="0" unique_id=1269484075]
 shape = SubResource("ConcavePolygonShape3D_ycnfs")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Base Track/Side_001" parent_id_path=PackedInt32Array(1020789915) index="0" unique_id=1968968701]
+physics_material_override = ExtResource("2_ycnfs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Base Track/Side_001/StaticBody3D" index="0" unique_id=1383661752]
 shape = SubResource("ConcavePolygonShape3D_pa4y2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Base Track" parent_id_path=PackedInt32Array(1645844229) index="2" unique_id=1459380715]
+physics_material_override = ExtResource("3_pa4y2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Base Track/StaticBody3D" index="0" unique_id=2102737208]
 shape = SubResource("ConcavePolygonShape3D_180p5")

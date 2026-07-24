@@ -9,10 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://bah2xmruadfoa" path="res://models/minigolf_hole.tscn" id="7_qsg7g"]
 [ext_resource type="PackedScene" uid="uid://dqd8wvqc38rd7" path="res://models/pedistal.blend" id="8_yuym2"]
 [ext_resource type="PackedScene" uid="uid://dj1t8bso4a2ms" path="res://models/divider.blend" id="9_4nayq"]
+[ext_resource type="Script" uid="uid://bb2p34nvt5mqr" path="res://levels/gungolf/hole_area.gd" id="9_vtoxi"]
 [ext_resource type="Script" uid="uid://b4rjhvhhliivj" path="res://common/interactable.gd" id="10_44ef7"]
 [ext_resource type="PackedScene" uid="uid://dmyp804sexrd7" path="res://models/turnstile.tscn" id="10_imrse"]
 [ext_resource type="PackedScene" uid="uid://dev0dyg4x4c88" path="res://ui/pointer/pointer.tscn" id="11_4nayq"]
 [ext_resource type="Script" uid="uid://cy6cfgvk0lr2b" path="res://levels/gungolf/pickup_gun_action.gd" id="11_kjgfd"]
+[ext_resource type="PackedScene" uid="uid://ds4fswtmigsdp" path="res://models/minigolf_ball.tscn" id="12_bvn44"]
 [ext_resource type="PackedScene" uid="uid://ulec4guhv528" path="res://models/gun.tscn" id="12_imrse"]
 [ext_resource type="Script" uid="uid://7amk3taod1tn" path="res://addons/minimum_convenience/scripts/line3d/line3d.gd" id="15_4al45"]
 
@@ -48,6 +50,9 @@ size = Vector3(0.1, 2.7, 22)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1udsw"]
 size = Vector3(2, 2, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ltmj"]
+size = Vector3(4.661377, 2, 8.138672)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yuym2"]
 size = Vector3(0.45, 1.2, 0.45)
@@ -261,12 +266,32 @@ transform = Transform3D(4.3711385e-08, -1, -8.940697e-08, -1, -4.371139e-08, 0, 
 transform = Transform3D(4.3475556e-08, -0.9946048, 0.103736326, -1, -4.371139e-08, 0, 4.53446e-09, -0.103736326, -0.9946048, -0.6909189, -0.5517775, -3.4672484)
 
 [node name="minigolf_start" parent="Hole 1" unique_id=1171637293 instance=ExtResource("5_cvhwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
+
+[node name="BallSpawn" type="Node3D" parent="Hole 1/minigolf_start" unique_id=999978004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030679703, 0.14260232, 0.7374091)
 
 [node name="minigolf_straight" parent="Hole 1" unique_id=1054106383 instance=ExtResource("6_jh2rq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00129807, -1.9902047)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
 [node name="minigolf_hole" parent="Hole 1" unique_id=27374273 instance=ExtResource("7_qsg7g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.004034281, -3.9926925)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Ball" parent="Hole 1" unique_id=399272331 instance=ExtResource("12_bvn44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030679703, 0.14260232, 0.7374091)
+
+[node name="HoleArea" type="Area3D" parent="Hole 1" unique_id=436701018 node_paths=PackedStringArray("hole_ball", "hole_ball_spawn")]
+collision_layer = 0
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+script = ExtResource("9_vtoxi")
+hole_ball = NodePath("../Ball")
+hole_ball_spawn = NodePath("../minigolf_start/BallSpawn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hole 1/HoleArea" unique_id=908376984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3729248, 0, -2.2001953)
+shape = SubResource("BoxShape3D_0ltmj")
 
 [node name="Lobby" type="Node3D" parent="." unique_id=188384183]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8917172, 0, 9.46651)
