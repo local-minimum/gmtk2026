@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bm7j0v7xgcx6o"]
+
+[ext_resource type="Script" uid="uid://q1oregpjtkgw" path="res://levels/cutscene.gd" id="1_4dsa2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjfgv"]
+font_size = 62
+font_color = Color(0.56761754, 0.5909177, 0.8612756, 1)
+
+[node name="Cutscene intro" type="Node2D" unique_id=1425691781]
+script = ExtResource("1_4dsa2")
+next_scene = "uid://hs8g7nlk5cw4"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=554880305]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1047613475]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1475047678]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=1359785937]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1458278677]
+layout_mode = 2
+text = "INTRO CUTSCENE"
+label_settings = SubResource("LabelSettings_kjfgv")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1055122659]
+layout_mode = 2
+text = "The Entrepreneur sits at his kitchen table thinking about what to
+create. Narrator introduces us to the premise of the game and
+his naivites."
+
+[node name="Label3" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1270086359]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 4)
+text = "Press Any key to continue"
+horizontal_alignment = 2
