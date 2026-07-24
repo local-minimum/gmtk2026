@@ -5,7 +5,7 @@ class_name Turnstile
     set(value):
         opened = value
         _animate_to(value)
-
+@export var live: bool = true
 @export var _turnstile: Node3D
 @export var _open_area: Area3D
 @export var _close_area: Area3D
@@ -27,12 +27,12 @@ func _ready() -> void:
         _turnstile.rotation.y = _OPEN_ANGLE
 
 func _handle_enter_open(body: Node3D) -> void:
-    if body is StaticBody3D:
+    if !live || body is StaticBody3D:
         return
     _animate_to(true, _delay_open)
 
 func _handle_enter_close(body: Node3D) -> void:
-    if body is StaticBody3D:
+    if !live || body is StaticBody3D:
         return
     _animate_to(false, _delay_close)
 

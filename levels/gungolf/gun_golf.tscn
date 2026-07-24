@@ -9,8 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bah2xmruadfoa" path="res://models/minigolf_hole.tscn" id="7_qsg7g"]
 [ext_resource type="PackedScene" uid="uid://dqd8wvqc38rd7" path="res://models/pedistal.blend" id="8_yuym2"]
 [ext_resource type="PackedScene" uid="uid://dj1t8bso4a2ms" path="res://models/divider.blend" id="9_4nayq"]
+[ext_resource type="Script" uid="uid://b4rjhvhhliivj" path="res://common/interactable.gd" id="10_44ef7"]
 [ext_resource type="PackedScene" uid="uid://dmyp804sexrd7" path="res://models/turnstile.tscn" id="10_imrse"]
 [ext_resource type="PackedScene" uid="uid://dev0dyg4x4c88" path="res://ui/pointer/pointer.tscn" id="11_4nayq"]
+[ext_resource type="Script" uid="uid://cy6cfgvk0lr2b" path="res://levels/gungolf/pickup_gun_action.gd" id="11_kjgfd"]
 [ext_resource type="PackedScene" uid="uid://ulec4guhv528" path="res://models/gun.tscn" id="12_imrse"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1udsw"]
@@ -48,6 +50,9 @@ size = Vector3(2, 2, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yuym2"]
 size = Vector3(0.45, 1.2, 0.45)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kjfgv"]
+radius = 0.1696224
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
 size = Vector3(1.5, 2.2, 0.1)
@@ -263,6 +268,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7382822, 2.3841858e-07, -0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6280212, 0)
 shape = SubResource("BoxShape3D_yuym2")
 
+[node name="gun" parent="Lobby/pedistal" unique_id=680091669 instance=ExtResource("12_imrse")]
+transform = Transform3D(0.011700827, -0.4578253, 0.8889653, 0.9954121, 0.08976289, 0.03312682, -0.094962336, 0.8844991, 0.45677507, 0.07125735, 1.2636393, 0.04941082)
+live = true
+
+[node name="Gun Interactable" type="StaticBody3D" parent="Lobby/pedistal" unique_id=265794847 node_paths=PackedStringArray("action")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.077703, 1.2669362, 0)
+collision_layer = 16
+script = ExtResource("10_44ef7")
+action = NodePath("PickupGunAction")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lobby/pedistal/Gun Interactable" unique_id=186375572]
+shape = SubResource("SphereShape3D_kjfgv")
+
+[node name="PickupGunAction" type="Node" parent="Lobby/pedistal/Gun Interactable" unique_id=1710891034 node_paths=PackedStringArray("gun", "player", "turnstile")]
+script = ExtResource("11_kjgfd")
+gun = NodePath("../../gun")
+player = NodePath("../../../../Player")
+turnstile = NodePath("../../../turnstile")
+action_name = "Pick up gun???"
+metadata/_custom_type_script = "uid://cy6cfgvk0lr2b"
+
 [node name="divider" parent="Lobby" unique_id=1326223464 instance=ExtResource("9_4nayq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42859364, -1.1920929e-07, -1.2314558)
 
@@ -337,12 +363,9 @@ shape = SubResource("BoxShape3D_kjfgv")
 
 [node name="turnstile" parent="Lobby" unique_id=597974019 instance=ExtResource("10_imrse")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.4382446, -1.1920929e-07, -0.08353615)
+live = false
 
 [node name="turnstile2" parent="Lobby" unique_id=1776313619 instance=ExtResource("10_imrse")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.6224928, -1.1920929e-07, -0.13677502)
 
 [node name="Pointer" parent="." unique_id=795342930 instance=ExtResource("11_4nayq")]
-
-[node name="gun" parent="." unique_id=680091669 instance=ExtResource("12_imrse")]
-transform = Transform3D(0.011700827, -0.4578253, 0.8889653, 0.9954121, 0.08976289, 0.03312682, -0.094962336, 0.8844991, 0.45677507, -2.558742, 1.2636396, 8.920908)
-live = true
